@@ -35,11 +35,11 @@ O jogo se passa em uma realidade próxima a nossa com o paranormal incluído nel
 
 Jogos;
 
-→ Série de Jogos *Cube Escape*
+→ Série de Jogos [Cube Escape](https://www.cubeescape.com/)
 
 → Jogos de Escape Room
 
-→ Enigma do Medo
+→ [Enigma do Medo](https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian)
 
 Filmes; 
 
