@@ -28,3 +28,29 @@ No meio da noite, Sebastian acorda com sons ecoando pelo corredor e, ao chegar p
 A muito tempo, os antigos proprietários realizavam rituais naquela região, o que fez com que a casa fosse amaldiçoada pelo caos, que sempre fornecia algo em troca de outra coisa. A casa foi comprada antigamente também e coisas aconteceram quando algumas pessoas ficavam sozinhas. Os puzzles que a entidade fazia nunca eram resolvidos e sempre conseguia a alma das pessoas, o que levava ao esquecimento do mundo. Fazendo com que outras pessoas não dessem falta da sequestrada. Aurora foi uma destas, a primeira desde que foi comprada a casa, houveram mais 4, que tiveram suas almas completamente corrompidas. A personagem Aurora era inteligente mas não conseguiu e foi morta sobrando apenas algumas partes de sua alma.
 
 ## Regras do Jogo
+
+O jogo se passa em uma realidade próxima a nossa com o paranormal incluído nela. Os mistérios serão resolvidos como um escape room, que ira se desenvolver a partir dos dois jogadores, um jogador depende do outro para conseguir progredir.
+
+## Referências
+
+Jogos;
+
+→ Série de Jogos *Cube Escape*
+
+→ Jogos de Escape Room
+
+→ Enigma do Medo
+
+Filmes; 
+
+→ O Telefone Preto
+
+## Objetivo do jogo
+
+O objetivo é progredir nos enigmas, resolvendo eles e passando pelas fases que são propostas, até achar um meio de sair, e os dois jogadores se “reencontrarem”.
+
+## Formas de receita
+
+- Patrocínios
+- Dicas para os enigmas
+- Propagandas
