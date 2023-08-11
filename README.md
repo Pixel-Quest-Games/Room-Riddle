@@ -45,6 +45,10 @@ Filmes;
 
 → [O Telefone Preto](https://www.imdb.com/title/tt7144666/)
 
+Estilo de arte;
+
+→ [Victorian Interior Pixel Art](https://emilyso.com/2017/07/23/victorian-interior-pixel-art/)
+
 ## Objetivo do jogo
 
 O objetivo é progredir nos enigmas, resolvendo eles e passando pelas fases que são propostas, até achar um meio de sair, e os dois jogadores se “reencontrarem”.
