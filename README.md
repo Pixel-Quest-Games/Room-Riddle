@@ -57,5 +57,5 @@ O objetivo é progredir nos enigmas, resolvendo eles e passando pelas fases que 
 
 - Patrocínios
 - Dicas para os enigmas
-- Propagandas
-- Versão paga c/ dicas livres
+- Versão grátis c/ anúncios
+- Versão paga c/ dicas livres e sem anúncios
