@@ -14,5 +14,5 @@ class Game extends Phaser.Game {
 
 /* Criação do objeto Game */
 window.onload = () => {
-    window.game = new Game ()
+    window.game = new Game()
 }
