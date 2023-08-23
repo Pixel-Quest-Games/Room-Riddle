@@ -8,5 +8,10 @@
   },
   "scripts": {
     "start": "npm start --prefix servidor"
-  }
+  },
+  "name": "room-riddle",
+  "description": "Jogo Escape Room",
+  "version": "0.1.0",
+  "author": "Pixel-Quest-Games <cleitonb.batistaa@gmail.com>",
+  "license": "ISC"
 }
