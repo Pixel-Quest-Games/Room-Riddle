@@ -59,3 +59,11 @@ O objetivo é progredir nos enigmas, resolvendo eles e passando pelas fases que 
 - Dicas para os enigmas
 - Versão grátis c/ anúncios
 - Versão paga c/ dicas livres e sem anúncios
+
+
+
+
+```mermaid
+Flowchart TD
+  Cena0 --> Cena1
+```
