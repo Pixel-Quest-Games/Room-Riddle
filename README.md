@@ -64,6 +64,6 @@ O objetivo é progredir nos enigmas, resolvendo eles e passando pelas fases que 
 
 
 ```mermaid
-Flowchart TD
+flowchart TD
   Cena0 --> Cena1
 ```
