@@ -65,5 +65,17 @@ O objetivo é progredir nos enigmas, resolvendo eles e passando pelas fases que 
 
 ```mermaid
 flowchart TD
-  Cena0 --> Cena1
+     A{Tela_de_Início} --> B[Tela_de_Salas]
+   B --> C(Telas_Sebastian)
+   B --> D(Telas_Mia)
+   C --> |Parede_S1| Tela_Final
+   C --> |Parede_S2| Tela_Final
+   C --> |Parede_S3| Tela_Final
+   C --> |Parede_S4| Tela_Final
+   D --> |Parede_M1| Tela_Final
+   D --> |Parede_M2| Tela_Final
+   D --> |Parede_M3| Tela_Final
+   D --> |Parede_M4| Tela_Final
+   Tela_Final --> E{Tela_Créditos}
+   E --> A
 ```
