@@ -47,7 +47,7 @@ export default class abertura_jogo extends Phaser.Scene {
       this.jogar.destroy()
       this.timedEvent.destroy()
       this.game.scene.stop('abertura_jogo')
-      this.game.scene.start('sala')
+      this.game.scene.start('tela_sala')
     }
   }
 
