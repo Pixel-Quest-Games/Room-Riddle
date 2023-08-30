@@ -21,50 +21,51 @@ export default class tela_sala extends Phaser.Scene {
         x: 84,
         y: 210
       },
-      {
-        numero: '1',
-        x: 150,
-        y: 175
-      },
+      
       {
         numero: '2',
-        x: 150,
-        y: 225
+        x: 242,
+        y: 210
       },
       {
         numero: '3',
-        x: 150,
-        y: 275
+        x: 406,
+        y: 210
       },
       {
         numero: '4',
-        x: 150,
-        y: 325
+        x: 568,
+        y: 210
       },
       {
         numero: '5',
-        x: 450,
-        y: 125
+        x: 714,
+        y: 210
       },
       {
         numero: '6',
-        x: 450,
-        y: 175
+        x: 84,
+        y: 354
       },
       {
         numero: '7',
-        x: 450,
-        y: 225
+        x: 242,
+        y: 354
       },
       {
         numero: '8',
-        x: 450,
-        y: 275
+        x: 406,
+        y: 354
       },
       {
         numero: '9',
-        x: 450,
-        y: 325
+        x: 568,
+        y: 354
+      },
+      {
+        numero: '10',
+        x: 714,
+        y: 354
       }
     ]
 
@@ -98,7 +99,7 @@ export default class tela_sala extends Phaser.Scene {
     if (this.timer <= 0) {
       this.timedEvent.destroy()
       this.game.scene.stop('tela_sala')
-      this.game.scene.start('abc')
+      this.game.scene.start('sala_s1')
     }
   }
 
