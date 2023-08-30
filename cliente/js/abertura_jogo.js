@@ -11,6 +11,11 @@ export default class abertura_jogo extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     })
+    /*tela cheia*/
+    this.load.spritesheet('tela-cheia', '../assets/imagens/tela-cheia.png', {
+      frameWidth: 64,
+      frameHeight: 64
+    })
   }
 
   /* add image(400,225, ...) por ser pela metade, começa pelo meio */
@@ -39,6 +44,20 @@ export default class abertura_jogo extends Phaser.Scene {
           loop: true
         })
       })
+    /*tela cheia*/
+    this.tela_cheia = this.add
+      .sprite(750, 50, 'tela-cheia', 0)
+      .setInteractive()
+      .on('pointerdown', () => {
+        if (this.scale.isFullscreen) {
+          this.tela_cheia.setFrame(0)
+          this.scale.stopFullscreen()
+        } else {
+          this.tela_cheia.setFrame(1)
+          this.scale.startFullscreen()
+        }
+      })
+      .setScrollFactor(0, 0)
   }
 
   countdown() {

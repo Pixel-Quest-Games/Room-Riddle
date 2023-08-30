@@ -83,7 +83,7 @@ export default class tela_sala extends Phaser.Scene {
         .setInteractive()
         .on('pointerdown', () => {
           item.botao.anims.play('porta')
-          this.timer = 2
+          this.timer = 0
           this.timedEvent = this.time.addEvent({
             delay: 1000,
             callback: this.countdown,
