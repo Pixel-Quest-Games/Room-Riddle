@@ -1,7 +1,7 @@
-export default class abertura_jogo extends Phaser.Scene {
+export default class sala_s1 extends Phaser.Scene {
 
   constructor () {
-    super('abertura_jogo')
+    super('sala_s1')
   }
 
   preload () {
