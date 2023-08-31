@@ -7,6 +7,7 @@ export default class abertura_jogo extends Phaser.Scene {
   preload() {
     this.load.image('tela_inicio', '../assets/imagens/tela_inicio.png')
     this.load.image('room_riddle', '../assets/imagens/room_riddle.png')
+    this.load.image('setajump', '../assets/imagens/setajump.png')
     this.load.spritesheet('botao_start', '../assets/imagens/botao_start.png', {
       frameWidth: 192,
       frameHeight: 192
@@ -22,6 +23,14 @@ export default class abertura_jogo extends Phaser.Scene {
   create() {
     this.add.image(400, 225, 'tela_inicio')
     this.add.image(400, 150, 'room_riddle')
+    
+    /* provisório para ir onde estamos fazendo */
+    this.pular = this.add.image(80, 380, 'setajump')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('abertura_jogo')
+        this.game.scene.start('sala_s1')
+      })
 
     this.anims.create({
       key: 'botao',
