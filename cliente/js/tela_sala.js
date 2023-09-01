@@ -99,7 +99,7 @@ export default class tela_sala extends Phaser.Scene {
     if (this.timer <= 0) {
       this.timedEvent.destroy()
       this.game.scene.stop('tela_sala')
-      this.game.scene.start('sala_s1')
+      this.game.scene.start('sala_m1')
     }
   }
 
