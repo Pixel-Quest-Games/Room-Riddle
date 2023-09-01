@@ -1,8 +1,6 @@
-# Room-Riddle
 <p align = "center">
      <img src="cliente/assets/imagens/room_riddle.png"/>
 </p>
-
 
 ## Premissa
 
