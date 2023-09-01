@@ -1,5 +1,5 @@
 # Room-Riddle
-<img src="cliente/assets/imagens/room_riddle.png" , align ="center">
+<img src="cliente/assets/imagens/room_riddle.png">
 
 ## Premissa
 
