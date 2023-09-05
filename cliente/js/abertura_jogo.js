@@ -68,7 +68,7 @@ export default class abertura_jogo extends Phaser.Scene {
       })
       .setScrollFactor(0, 0)
   }
-
+  /*temporizador para animação do botao*/
   countdown() {
     this.timer -= 0.5
     if (this.timer <= 0) {
