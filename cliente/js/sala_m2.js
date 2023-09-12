@@ -16,7 +16,7 @@ export default class sala_m2 extends Phaser.Scene {
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 50, 'inventario')
-
+    
     this.add.image(25, 225, 'seta_e')
       .setInteractive()
       .on('pointerdown', () => {
