@@ -75,11 +75,51 @@ export default class enigma_final extends Phaser.Scene {
         y: 333
       }
     ]
+    this.verificacao4 = 'V'
     this.botoes.forEach((item, index) => {
       item.botao = this.add.image(item.x, item.y, 'buttom_down')
         .setInteractive()
         .on('pointerdown', () => {
           this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
+          console.log(this.botoes[index].numero)
+          //Verifica primeira caixa
+          if (this.botoes[index].numero = '1' && this.alfabeto[index].objeto.frame.name == 21) {
+            console.log('deu certo')
+            this.verificacao1 = 'V' 
+          } else {
+            console.log('falsooo')
+            this.verificacao1 = 'F'
+          }
+          //Verifica segunda caixa
+          if (this.botoes[index].numero = '2' && this.alfabeto[index].objeto.frame.name == 8) {
+            console.log('deu certo')
+            this.verificacao2 = 'V'
+          } else {
+            console.log('falsooo')
+            this.verificacao2 = 'F'
+          }
+          //Verifica terceira caixa
+          if (this.botoes[index].numero = '3' && this.alfabeto[index].objeto.frame.name == 21) {
+            console.log('deu certo')
+            this.verificacao3 = 'V'
+          } else {
+            console.log('falsooo')
+            this.verificacao3 = 'F'
+          }
+          //Verifica quarta caixa
+          if (this.botoes[index].numero = '4' && this.alfabeto[index].objeto.frame.name == 0) {
+            console.log('deu certo')
+            this.verificacao4 = 'V'
+          } else {
+            console.log('falsooo')
+            this.verificacao4 = 'F'
+          }
+          //Fazer outro if pra ver se fez o enigma anterior
+          if (this.verificacao1 == 'V' && this.verificacao2 == 'V' && this.verificacao3 == 'V' && this.verificacao4 == 'V') {
+            console.log('foi meu')
+            this.add.image(200, 200, 'seta_down')
+          }
+          //if(this.botoes[index] & this.botoes.alfabeto)
         })
     })
 
