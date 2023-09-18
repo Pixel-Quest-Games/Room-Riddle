@@ -3,7 +3,7 @@ export default class enigma_final extends Phaser.Scene {
   constructor () {
     super('enigma_final')
   }
-
+  //Pré-carregamento
   preload () {
     this.load.image('enigma_final_tela_cheia', '../assets/imagens/enigma_final_tela_cheia.png')
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
@@ -11,6 +11,7 @@ export default class enigma_final extends Phaser.Scene {
     this.load.image('vverde', '../assets/imagens/v_verde.png')
     this.load.image('iverde', '../assets/imagens/i_verde.png')
     this.load.image('averde', '../assets/imagens/a_verde.png')
+    this.load.audio('porta_abrindo','..assets/audios/porta_abrindo.mp3')
     this.load.spritesheet('alfabeto_spritesheet', '../assets/imagens/alfabeto_spritesheet.png', {
       frameWidth: 176,
       frameHeight: 176
@@ -18,16 +19,17 @@ export default class enigma_final extends Phaser.Scene {
 
   }
 
-  /* add image(400,225, ...) por ser pela metade, começa pelo meio */
   create () {
+    //Adição de plano de fundo
     this.add.image(400, 225, 'enigma_final_tela_cheia')
+    //Adição de seta e interatividade
     this.add.image(400, 395, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('enigma_final')
         this.game.scene.start('sala_m1')
       })
-
+    //Configuração dos locais
     this.alfabeto = [
       {
         numero: '1',
@@ -51,10 +53,11 @@ export default class enigma_final extends Phaser.Scene {
         y: 230
       }
     ]
+    //Adiciona posições do alfabeto
     this.alfabeto.forEach((item) => {
       item.objeto = this.add.sprite(item.x, item.y, 'alfabeto_spritesheet')
     })
-
+    //Configuração dos botões
     this.botoes = [
       {
         numero: '1',
@@ -78,17 +81,10 @@ export default class enigma_final extends Phaser.Scene {
         y: 333
       }
     ]
-/*
-    const verifica = (x, y) => {
-      if (this.botoes[index].numero === x && this.alfabeto[index].objeto.frame.name === y) {
-        
-      }
-    }*/
 
-
-
-    
+    //Adição dos botoes e configuração da interatividade.
     this.verificacao4 = 'V'
+    this.verifica_enigma = 'F'
     this.botoes.forEach((item, index) => {
       item.botao = this.add.image(item.x, item.y, 'buttom_down')
         .setInteractive()
@@ -137,17 +133,22 @@ export default class enigma_final extends Phaser.Scene {
               this.verificacao4 = 'F'
             }
           }
-          //Fazer outro if pra ver se fez o enigma anterior
+          //Fazer outro if pra ver se fez o enigma anterior!!!!! -> podem passar a resposta um para outro
+          //Verificação pra ver se corresponde ao código
           if (this.verificacao1 == 'V' && this.verificacao2 == 'V' && this.verificacao3 == 'V' && this.verificacao4 == 'V') {
             console.log('foi meu')
+            //Ilumina letras para verde
             this.add.image(173, 230, 'vverde')
             this.add.image(325, 230, 'iverde')
             this.add.image(476, 230, 'vverde')
             this.add.image(622, 230, 'averde')
+            this.verifica_enigma = 'V'
+            //Adição de sons - perguntar para o professor
+            this.add.audio('porta_abrindo')
+            //Configurar comunicação com a cena sala_m1.js para fazer a interatividade da porta funcionar
           }
         })
     })
-
   }
   update () { }
 }

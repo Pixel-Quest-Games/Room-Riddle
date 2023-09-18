@@ -2,7 +2,7 @@ export default class tela_sala extends Phaser.Scene {
   constructor () {
     super('tela_sala')
   }
-
+  //Pré-carregamento
   preload () {
     this.load.image('tela_salas', '../assets/imagens/tela_salas.png')
     this.load.spritesheet('porta', '../assets/imagens/porta_verde.png', {
@@ -11,17 +11,15 @@ export default class tela_sala extends Phaser.Scene {
     })
   }
 
-  /* add image(400,225, ...) por ser pela metade, começa pelo meio */
   create () {
     this.add.image(400, 225, 'tela_salas')
-
+    //Criação dos objetos sala
     this.salas = [
       {
         numero: '1',
         x: 84,
         y: 210
       },
-      
       {
         numero: '2',
         x: 242,
@@ -68,7 +66,7 @@ export default class tela_sala extends Phaser.Scene {
         y: 354
       }
     ]
-
+    //Configuração da animação da porta
     this.anims.create({
       key: 'porta',
       frames: this.anims.generateFrameNumbers('porta', {
@@ -77,7 +75,7 @@ export default class tela_sala extends Phaser.Scene {
       }),
       frameRate: 6
     })
-
+    //Coloca portas no lugar delas
     this.salas.forEach((item) => {
       item.botao = this.add.sprite(item.x, item.y, 'porta')
         .setInteractive()
@@ -93,7 +91,7 @@ export default class tela_sala extends Phaser.Scene {
         })
     })
   }
-
+  //Temporizador para virada de cena
   countdown () {
     this.timer -= 0.5
     if (this.timer <= 0) {

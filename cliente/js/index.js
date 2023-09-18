@@ -12,7 +12,7 @@ import enigma_final from './enigma_final.js'
 class Game extends Phaser.Game {
   constructor () {
     super(config)
-
+    //Adição de cenas que o index vai acessar
     this.scene.add('abertura_jogo', abertura_jogo)
     this.scene.add('tela_sala', tela_sala)
     this.scene.add('sala_m1', sala_m1)
@@ -21,7 +21,7 @@ class Game extends Phaser.Game {
     this.scene.add('sala_m3', sala_m3)
     this.scene.add('sala_m4', sala_m4)
     this.scene.start('abertura_jogo')
-
+    //Objetos comuns as cenas
     this.inventario = {}
   }
 }

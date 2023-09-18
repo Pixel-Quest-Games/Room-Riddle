@@ -3,37 +3,37 @@ export default class abertura_jogo extends Phaser.Scene {
   constructor () {
     super('abertura_jogo')
   }
-
+  //Pré carregamento
   preload() {
     this.load.image('tela_inicio', '../assets/imagens/tela_inicio.png')
     this.load.image('room_riddle', '../assets/imagens/room_riddle.png')
     this.load.image('setajump', '../assets/imagens/setajump.png')
     this.load.image('login', '../assets/imagens/icone_login.png')
+
     this.load.spritesheet('botao_start', '../assets/imagens/botao_start.png', {
       frameWidth: 192,
       frameHeight: 192
     })
-    /*tela cheia*/
     this.load.spritesheet('tela-cheia', '../assets/imagens/tela-cheia.png', {
       frameWidth: 64,
       frameHeight: 64
     })
   }
 
-  /* add image(400,225, ...) por ser pela metade, começa pelo meio */
-  create() {
+  create () {
+    //Adição de imagens
     this.add.image(400, 225, 'tela_inicio')
     this.add.image(400, 150, 'room_riddle')
     this.add.image(720,380, 'login')
     
-    /* provisório para ir onde estamos fazendo */
+    //Provisório 
     this.pular = this.add.image(80, 380, 'setajump')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('abertura_jogo')
         this.game.scene.start('sala_m1')
       })
-
+    //Animação do botão
     this.anims.create({
       key: 'botao',
       frames: this.anims.generateFrameNumbers('botao_start', {
@@ -42,7 +42,7 @@ export default class abertura_jogo extends Phaser.Scene {
       }),
       frameRate: 8
     })
-
+    //Temporizador para animação ocorrer a tempo antes de fechar a cena
     this.timer = 0
     this.jogar = this.add.sprite(390, 380, 'botao_start')
       .setInteractive()
@@ -55,7 +55,7 @@ export default class abertura_jogo extends Phaser.Scene {
           loop: true
         })
       })
-    /*tela cheia*/
+    //Tela cheia
     this.tela_cheia = this.add
       .sprite(750, 50, 'tela-cheia', 0)
       .setInteractive()
@@ -70,7 +70,7 @@ export default class abertura_jogo extends Phaser.Scene {
       })
       .setScrollFactor(0, 0)
   }
-  /*temporizador para animação do botao*/
+  //Temporizador para animação do botão
   countdown() {
     this.timer -= 0.5
     if (this.timer <= 0) {

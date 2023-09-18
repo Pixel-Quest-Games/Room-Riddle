@@ -11,12 +11,13 @@ export default class sala_m4 extends Phaser.Scene {
     this.load.image('seta_d', '../assets/imagens/seta_direita.png')
   }
 
-  /* add image(400,225, ...) por ser pela metade, começa pelo meio */
+
   create () {
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 50, 'inventario')
 
+    //Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')
       .setInteractive()
       .on('pointerdown', () => {

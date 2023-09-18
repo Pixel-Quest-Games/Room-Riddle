@@ -13,18 +13,20 @@ export default class sala_m1 extends Phaser.Scene {
     this.load.image('enigma_final', '../assets/imagens/enigma_final.png')
   }
 
-  /* add image(400,225, ...) por ser pela metade, começa pelo meio */
+  
   create () {
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 323, 'porta_final')
     this.add.image(400, 50, 'inventario')
+    //Configuração da cena enigma_final
     this.add.image(400, 175, 'enigma_final')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('enigma_final')
       })
+    //Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')
       .setInteractive()
       .on('pointerdown', () => {
