@@ -11,7 +11,7 @@ preload() {
   this.load.image('seta_e', '../assets/imagens/seta_esquerda.png')
   this.load.image('seta_d', '../assets/imagens/seta_direita.png')
   this.load.image('enigma_final', '../assets/imagens/enigma_final.png')
-
+  this.load.image('mesa', '../assets/imagens/mesa_m1.png')
 }
 
 
@@ -51,6 +51,7 @@ create() {
       this.game.scene.stop('sala_m1')
       this.game.scene.start('sala_m2')
     })
+  this.add.image(620,390, 'mesa')
 }
 update() { }
 }
