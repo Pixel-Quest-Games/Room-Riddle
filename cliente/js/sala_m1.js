@@ -12,6 +12,7 @@ preload() {
   this.load.image('seta_d', '../assets/imagens/seta_direita.png')
   this.load.image('enigma_final', '../assets/imagens/enigma_final.png')
   this.load.image('mesa', '../assets/imagens/mesa_m1.png')
+  this.load.image('cofre', '../assets/imagens/cofre.png')
 }
 
 
@@ -52,6 +53,12 @@ create() {
       this.game.scene.start('sala_m2')
     })
   this.add.image(620,390, 'mesa')
+  this.add.image(670, 328, 'cofre')
+    .setInteractive()
+    .on('pointerdown', () => {
+      this.game.scene.stop('sala_m1')
+      this.game.scene.start('tela_cofre')
+    })
 }
 update() { }
 }
