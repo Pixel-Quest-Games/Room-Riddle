@@ -13,6 +13,12 @@ preload() {
   this.load.image('enigma_final', '../assets/imagens/enigma_final.png')
   this.load.image('mesa', '../assets/imagens/mesa_m1.png')
   this.load.image('cofre', '../assets/imagens/cofre.png')
+  this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
+
+  this.load.script(
+    'webfont',
+    'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+  )
 }
 
 
@@ -58,6 +64,12 @@ create() {
     .on('pointerdown', () => {
       this.game.scene.stop('sala_m1')
       this.game.scene.start('tela_cofre')
+    })
+  this.add.image(600, 337, 'papel_enrolado')
+    .setInteractive()
+    .on('pointerdown', () => {
+      this.game.scene.stop('sala_m1')
+      this.game.scene.start('tela_papel')
     })
 }
 update() { }

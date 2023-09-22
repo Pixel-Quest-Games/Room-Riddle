@@ -9,6 +9,7 @@ import sala_m3 from './sala_m3.js'
 import sala_m4 from './sala_m4.js'
 import enigma_final from './enigma_final.js'
 import tela_cofre from './tela_cofre.js'
+import tela_papel from './tela_papel.js'
 
 /* Definição do objeto Game */
 class Game extends Phaser.Game {
@@ -24,6 +25,7 @@ class Game extends Phaser.Game {
     this.scene.add('sala_m3', sala_m3)
     this.scene.add('sala_m4', sala_m4)
     this.scene.add('tela_cofre', tela_cofre)
+    this.scene.add('tela_papel', tela_papel)
     this.scene.start('abertura_jogo')
     //Objetos comuns as cenas
     this.inventario = {}
