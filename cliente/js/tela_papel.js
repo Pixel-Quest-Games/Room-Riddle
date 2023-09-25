@@ -19,9 +19,19 @@ export default class tela_papel extends Phaser.Scene {
     }
     )
     this.add.image(400, 225, 'papel')
-    this.add.text(400, 225, '0101', {
+    this.add.text(150, 180, '01010110 01000001 01001100', {
       fontFamily: 'fonte_papel',
-      fontSize: '34px',
+      fontSize: '20px',
+      fill: 'black'
+    })
+    this.add.text(150, 220, '01000101 01001110 01000100', {
+      fontFamily: 'fonte_papel',
+      fontSize: '20px',
+      fill: 'black'
+    })
+    this.add.text(330, 260, '01001111', {
+      fontFamily: 'fonte_papel',
+      fontSize: '20px',
       fill: 'black'
     })
 
@@ -32,7 +42,8 @@ export default class tela_papel extends Phaser.Scene {
         this.game.scene.start('sala_m1')
       })
   }
+  update () {
 
-  update () { }
+  }
 
 }
