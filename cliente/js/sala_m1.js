@@ -14,6 +14,8 @@ preload() {
   this.load.image('mesa', '../assets/imagens/mesa_m1.png')
   this.load.image('cofre', '../assets/imagens/cofre.png')
   this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
+  this.load.image('walkie_talkie', '../assets/imagens/walkie_talkie.png')
+  this.load.image('estante', '../assets/imagens/estante.png')
 
   this.load.script(
     'webfont',
@@ -71,6 +73,8 @@ create() {
       this.game.scene.stop('sala_m1')
       this.game.scene.start('tela_papel')
     })
+  this.add.image(545, 332, 'walkie_talkie')
+  this.add.image(100, 322, 'estante')
 }
 update() { }
 }

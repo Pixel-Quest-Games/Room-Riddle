@@ -6,11 +6,13 @@ export default class tela_cofre extends Phaser.Scene {
 
   preload () {
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
+    this.load.image('background', '../assets/imagens/tela_cofre.png')
   }
 
   
   create () {
-    this.add.image(400, 395, 'seta_down')
+    this.add.image(400, 225, 'background')
+    this.add.image(400, 400, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('tela_cofre')
