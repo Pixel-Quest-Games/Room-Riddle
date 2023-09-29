@@ -74,7 +74,7 @@ create() {
       this.game.scene.start('tela_papel')
     })
   this.add.image(545, 332, 'walkie_talkie')
-  this.add.image(100, 322, 'estante')
+  this.add.image(100, 395, 'estante')
 }
 update() { }
 }
