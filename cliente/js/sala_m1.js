@@ -16,6 +16,10 @@ preload() {
   this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
   this.load.image('walkie_talkie', '../assets/imagens/walkie_talkie.png')
   this.load.image('estante', '../assets/imagens/estante.png')
+  this.load.image('suporte_bonecos', '../assets/imagens/suporte_bonecos.png')
+  this.load.image('boneco_homem_p', '../assets/imagens/boneco_homem_p.png')
+  this.load.image('boneco_mulher_p', '../assets/imagens/boneco_mulher_p.png')
+  this.load.image('vaso1', '../assets/imagens/vaso1.png')
 
   this.load.script(
     'webfont',
@@ -75,6 +79,10 @@ create() {
     })
   this.add.image(545, 332, 'walkie_talkie')
   this.add.image(100, 395, 'estante')
+  this.add.image(116, 319, 'suporte_bonecos')
+  this.add.image(116, 309, 'boneco_homem_p')
+  this.add.image(99, 309, 'boneco_mulher_p')
+  this.add.image(275, 418, 'vaso1')
 }
 update() { }
 }

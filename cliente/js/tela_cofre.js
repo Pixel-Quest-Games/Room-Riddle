@@ -23,7 +23,7 @@ export default class tela_cofre extends Phaser.Scene {
         this.game.scene.stop('tela_cofre')
         this.game.scene.start('sala_m1')
       })
-
+    
     this.alfabeto = [
       {
         numero: '1',
