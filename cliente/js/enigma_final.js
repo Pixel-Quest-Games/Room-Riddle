@@ -155,7 +155,7 @@ export default class enigma_final extends Phaser.Scene {
             this.add.image(622, 230, 'averde')
             this.game.verifica_enigma = 'V'
             this.alfabeto.forEach((index) => {
-              this.alfabeto[index].setVisible.value == 0
+              this.alfabeto[index].objeto.setVisible(false)
             })
           }
         })
