@@ -111,71 +111,75 @@ export default class tela_cofre extends Phaser.Scene {
         .setInteractive()
         .on('pointerdown', () => {
           this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
+
+          if (this.botoes[index].numero == '1') {
+            if (this.alfabeto[index].objeto.frame.name == 21) {
+              this.verificacao1 = 'V'
+              console.log('V')
+            } else {
+              this.verificacao1 = 'F'
+              console.log('F')
+            }
+          }
+          if (this.botoes[index].numero == '2') {
+            if (this.alfabeto[index].objeto.frame.name == 0) {
+              console.log('deu certo')
+              this.verificacao2 = 'V'
+            } else {
+              console.log('falsooo')
+              this.verificacao2 = 'F'
+            }
+          }
+          if (this.botoes[index].numero == '3') {
+            if (this.alfabeto[index].objeto.frame.name == 11) {
+              console.log('deu certo')
+              this.verificacao3 = 'V'
+            } else {
+              console.log('falsooo')
+              this.verificacao3 = 'F'
+            }
+          }
+          if (this.botoes[index].numero == '4') {
+            if (this.alfabeto[index].objeto.frame.name == 4) {
+              console.log('deu certo')
+              this.verificacao4 = 'V'
+            } else {
+              console.log('falsooo')
+              this.verificacao4 = 'F'
+            }
+          }
+          if (this.botoes[index].numero == '5') {
+            if (this.alfabeto[index].objeto.frame.name == 13) {
+              console.log('deu certo')
+              this.verificacao5 = 'V'
+            } else {
+              console.log('falsooo')
+              this.verificacao5 = 'F'
+            }
+          }
+          if (this.botoes[index].numero == '6') {
+            if (this.alfabeto[index].objeto.frame.name == 3) {
+              console.log('deu certo')
+              this.verificacao6 = 'V'
+            } else {
+              console.log('falsooo')
+              this.verificacao6 = 'F'
+            }
+          }
+          if (this.botoes[index].numero == '7') {
+            if (this.alfabeto[index].objeto.frame.name == 14) {
+              console.log('deu certo')
+              this.verificacao7 = 'V'
+            } else {
+              console.log('falsooo')
+              this.verificacao7 = 'F'
+            }
+          }
+          if (this.verificacao1 == 'V' && this.verificacao2 == 'V' && this.verificacao3 == 'V' && this.verificacao4 == 'V' && this.verificacao5 == 'V' && this.verificacao6 == 'V' && this.verificacao7 == 'V') {
+            console.log('foi meu')
+            
+          }
         })
-      if (this.botoes[index].numero == '1') {
-        if (this.alfabeto[index].objeto.frame.name == 21) {
-          this.verificacao1 = 'V'
-        } else {
-          this.verificacao1 = 'F'
-        }
-      }
-      if (this.botoes[index].numero == '2') {
-        if (this.alfabeto[index].objeto.frame.name == 0) {
-          console.log('deu certo')
-          this.verificacao2 = 'V'
-        } else {
-          console.log('falsooo')
-          this.verificacao2 = 'F'
-        }
-      }
-      if (this.botoes[index].numero == '3') {
-        if (this.alfabeto[index].objeto.frame.name == 11) {
-          console.log('deu certo')
-          this.verificacao3 = 'V'
-        } else {
-          console.log('falsooo')
-          this.verificacao3 = 'F'
-        }
-      }
-      if (this.botoes[index].numero == '4') {
-        if (this.alfabeto[index].objeto.frame.name == 4) {
-          console.log('deu certo')
-          this.verificacao4 = 'V'
-        } else {
-          console.log('falsooo')
-          this.verificacao4 = 'F'
-        }
-      }
-      if (this.botoes[index].numero == '5') {
-        if (this.alfabeto[index].objeto.frame.name == 13) {
-          console.log('deu certo')
-          this.verificacao5 = 'V'
-        } else {
-          console.log('falsooo')
-          this.verificacao5 = 'F'
-        }
-      }
-      if (this.botoes[index].numero == '6') {
-        if (this.alfabeto[index].objeto.frame.name == 3) {
-          console.log('deu certo')
-          this.verificacao6 = 'V'
-        } else {
-          console.log('falsooo')
-          this.verificacao6 = 'F'
-        }
-      }
-      if (this.botoes[index].numero == '7') {
-        if (this.alfabeto[index].objeto.frame.name == 14) {
-          console.log('deu certo')
-          this.verificacao7 = 'V'
-        } else {
-          console.log('falsooo')
-          this.verificacao7 = 'F'
-        }
-      }
-      if (this.verificacao1 == 'V' && this.verificacao2 == 'V' && this.verificacao3 == 'V' && this.verificacao4 == 'V' && this.verificacao5 == 'V' && this.verificacao6 == 'V' && this.verificacao7 == 'V') {
-        console.log('foi meu')
-      }
     })
   }
 

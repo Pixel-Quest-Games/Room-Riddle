@@ -16,6 +16,8 @@ class Game extends Phaser.Game {
   constructor () {
     super(config)
     //Adição de cenas que o index vai acessar
+    this.socket = io()
+    
     this.scene.add('abertura_jogo', abertura_jogo)
     this.scene.add('tela_sala', tela_sala)
     this.scene.add('tela_final', tela_final)
