@@ -110,7 +110,8 @@ export default class tela_cofre extends Phaser.Scene {
       item.botao = this.add.image(item.x, item.y, 'botao')
         .setInteractive()
         .on('pointerdown', () => {
-          this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
+          if (this.game.verifica_enigma2 === 'F') {
+            this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
 
           if (this.botoes[index].numero == '1') {
             if (this.alfabeto[index].objeto.frame.name == 21) {
@@ -177,8 +178,10 @@ export default class tela_cofre extends Phaser.Scene {
           }
           if (this.verificacao1 == 'V' && this.verificacao2 == 'V' && this.verificacao3 == 'V' && this.verificacao4 == 'V' && this.verificacao5 == 'V' && this.verificacao6 == 'V' && this.verificacao7 == 'V') {
             console.log('foi meu')
-            
+            this.game.verifica_enigma2 = 'V'
           }
+          }
+          
         })
     })
   }

@@ -99,6 +99,7 @@ export default class enigma_final extends Phaser.Scene {
         .setInteractive()
         .on('pointerdown', () => {
           //if(this.game.verifica_enigma = )
+          if (this.game.verifica_enigma === 'F') {
           this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
           console.log(this.botoes[index].numero)
           console.log(this.alfabeto[index].objeto.frame.name)
@@ -157,6 +158,7 @@ export default class enigma_final extends Phaser.Scene {
             this.alfabeto.forEach((index) => {
               this.alfabeto[index].objeto.setVisible(false)
             })
+            }
           }
         })
     })

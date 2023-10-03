@@ -17,6 +17,10 @@ class Game extends Phaser.Game {
     super(config)
     //Adição de cenas que o index vai acessar
     this.socket = io()
+    this.socket.on('connect', () => {
+      console.log('Conectado ao servidor!')
+      this.socket.emit('entrar-na-sala', 1)
+    })
     
     this.scene.add('abertura_jogo', abertura_jogo)
     this.scene.add('tela_sala', tela_sala)
@@ -31,7 +35,8 @@ class Game extends Phaser.Game {
     this.scene.start('abertura_jogo')
     //Objetos comuns as cenas
     this.inventario = {}
-    this.verifica_enigma = undefined
+    this.verifica_enigma = 'F'
+    this.verifica_enigma2 = 'F' 
   }
 }
 

@@ -7,7 +7,11 @@
     "eslint-plugin-promise": "^6.1.1"
   },
   "scripts": {
+    "install": "npm install --prefix servidor",
     "start": "npm start --prefix servidor"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "name": "room-riddle",
   "description": "Jogo Escape Room",
