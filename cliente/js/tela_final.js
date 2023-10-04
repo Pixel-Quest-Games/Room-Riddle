@@ -1,5 +1,5 @@
-export default class tela_final extends Phaser.Scene {
-
+// eslint-disable-next-line no-undef
+export default class telafinal extends Phaser.Scene {
   constructor () {
     super('tela_final')
   }
@@ -13,5 +13,4 @@ export default class tela_final extends Phaser.Scene {
   }
 
   update () { }
-
 }

@@ -1,10 +1,11 @@
-export default class abertura_jogo extends Phaser.Scene {
-
+// eslint-disable-next-line no-undef
+export default class aberturajogo extends Phaser.Scene {
   constructor () {
     super('abertura_jogo')
   }
-  //Pré carregamento
-  preload() {
+
+  // Pré carregamento
+  preload () {
     this.load.image('tela_inicio', '../assets/imagens/tela_inicio.png')
     this.load.image('room_riddle', '../assets/imagens/room_riddle.png')
     this.load.image('setajump', '../assets/imagens/setajump.png')
@@ -21,19 +22,19 @@ export default class abertura_jogo extends Phaser.Scene {
   }
 
   create () {
-    //Adição de imagens
+    // Adição de imagens
     this.add.image(400, 225, 'tela_inicio')
     this.add.image(400, 150, 'room_riddle')
-    this.add.image(720,380, 'login')
-    
-    //Provisório 
+    this.add.image(720, 380, 'login')
+
+    // Provisório
     this.pular = this.add.image(80, 380, 'setajump')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('abertura_jogo')
         this.game.scene.start('sala_m1')
       })
-    //Animação do botão
+    // Animação do botão
     this.anims.create({
       key: 'botao',
       frames: this.anims.generateFrameNumbers('botao_start', {
@@ -42,7 +43,7 @@ export default class abertura_jogo extends Phaser.Scene {
       }),
       frameRate: 8
     })
-    //Temporizador para animação ocorrer a tempo antes de fechar a cena
+    // Temporizador para animação ocorrer a tempo antes de fechar a cena
     this.timer = 0
     this.jogar = this.add.sprite(390, 380, 'botao_start')
       .setInteractive()
@@ -55,7 +56,7 @@ export default class abertura_jogo extends Phaser.Scene {
           loop: true
         })
       })
-    //Tela cheia
+    // Tela cheia
     this.tela_cheia = this.add
       .sprite(750, 50, 'tela-cheia', 0)
       .setInteractive()
@@ -70,8 +71,9 @@ export default class abertura_jogo extends Phaser.Scene {
       })
       .setScrollFactor(0, 0)
   }
-  //Temporizador para animação do botão
-  countdown() {
+
+  // Temporizador para animação do botão
+  countdown () {
     this.timer -= 0.5
     if (this.timer <= 0) {
       this.jogar.destroy()
@@ -81,6 +83,5 @@ export default class abertura_jogo extends Phaser.Scene {
     }
   }
 
-  update() { }
-
+  update () { }
 }

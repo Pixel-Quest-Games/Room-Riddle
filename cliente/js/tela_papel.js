@@ -1,5 +1,5 @@
-export default class tela_papel extends Phaser.Scene {
-
+// eslint-disable-next-line no-undef
+export default class telapapel extends Phaser.Scene {
   constructor () {
     super('tela_papel')
   }
@@ -9,8 +9,8 @@ export default class tela_papel extends Phaser.Scene {
     this.load.image('papel', '../assets/imagens/tela_papel.png')
   }
 
-
   create () {
+    // eslint-disable-next-line no-undef
     WebFont.load({
       custom: {
         families: ['fonte_papel'],
@@ -42,8 +42,8 @@ export default class tela_papel extends Phaser.Scene {
         this.game.scene.start('sala_m1')
       })
   }
+
   update () {
 
   }
-
 }
