@@ -11,6 +11,7 @@ import salam4 from './sala_m4.js'
 import enigmafinal from './enigma_final.js'
 import telacofre from './tela_cofre.js'
 import telapapel from './tela_papel.js'
+import cofreaberto from './cofre_aberto.js'
 
 /* Definição do objeto Game */
 class Game extends Phaser.Game {
@@ -19,10 +20,6 @@ class Game extends Phaser.Game {
 
     // Adição de cenas que o index vai acessar
     this.socket = io()
-    this.socket.on('connect', () => {
-      console.log('Conectado ao servidor!')
-      this.socket.emit('entrar-na-sala', 1)
-    })
 
     this.scene.add('abertura_jogo', aberturajogo)
     this.scene.add('tela_sala', telasala)
@@ -34,6 +31,7 @@ class Game extends Phaser.Game {
     this.scene.add('sala_m4', salam4)
     this.scene.add('tela_cofre', telacofre)
     this.scene.add('tela_papel', telapapel)
+    this.scene.add('cofre_aberto', cofreaberto)
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
