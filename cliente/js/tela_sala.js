@@ -83,18 +83,31 @@ export default class telasala extends Phaser.Scene {
         .setInteractive()
         .on('pointerdown', () => {
           this.game.socket.emit('entrar-na-sala', item.numero)
-
           this.aguarde = this.add.text(this.game.config.width / 20, this.game.config.height / 20, 'Conectando...')
+
           this.game.socket.on('jogadores', (jogadores) => {
             this.game.jogadores = jogadores
-            item.botao.anims.play('porta')
-            this.timer = 0
-            this.timedEvent = this.time.addEvent({
-              delay: 1000,
-              callback: this.countdown,
-              callbackScope: this,
-              loop: true
-            })
+            console.log(jogadores)
+
+            if (this.game.jogadores.primeiro === this.game.socket.id) {
+              item.botao.anims.play('porta')
+              this.timer = 0
+              this.timedEvent = this.time.addEvent({
+                delay: 1000,
+                callback: this.countdown,
+                callbackScope: this,
+                loop: true
+              })
+            } else if (this.game.jogadores.segundo === this.game.socket.id) {
+              item.botao.anims.play('porta')
+              this.timer = 0
+              this.timedEvent = this.time.addEvent({
+                delay: 1000,
+                callback: this.countdown2,
+                callbackScope: this,
+                loop: true
+              })
+            }
           })
         })
     })
@@ -107,6 +120,15 @@ export default class telasala extends Phaser.Scene {
       this.timedEvent.destroy()
       this.game.scene.stop('tela_sala')
       this.game.scene.start('sala_m1')
+    }
+  }
+
+  countdown2 () {
+    this.timer -= 0.5
+    if (this.timer <= 0) {
+      this.timedEvent.destroy()
+      this.game.scene.stop('tela_sala')
+      this.game.scene.start('cofre_aberto')
     }
   }
 

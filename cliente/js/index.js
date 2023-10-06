@@ -20,6 +20,9 @@ class Game extends Phaser.Game {
 
     // Adição de cenas que o index vai acessar
     this.socket = io()
+    this.socket.on('connect', () => {
+      console.log('Conectado ao servidor!')
+    })
 
     this.scene.add('abertura_jogo', aberturajogo)
     this.scene.add('tela_sala', telasala)

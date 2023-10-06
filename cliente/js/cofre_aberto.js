@@ -5,11 +5,13 @@ export default class cofreaberto extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('background', '../assets/imagens/you_win.png')
+    this.load.image('cofre_aberto', '../assets/imagens/cofre_aberto.png')
+    this.load.image('boneco_entidade', '../assets/imagens/boneco_entidade.png')
   }
 
   create () {
-    this.add.image(400, 225, 'background')
+    this.add.image(400, 225, 'cofre_aberto')
+    this.add.image(400, 200, 'boneco_entidade')
   }
 
   update () { }

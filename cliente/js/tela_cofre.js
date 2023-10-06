@@ -16,17 +16,6 @@ export default class telacofre extends Phaser.Scene {
 
   create () {
     this.add.image(400, 225, 'background')
-    this.add.image(400, 400, 'seta_down')
-      .setInteractive()
-      .on('pointerdown', () => {
-        if (this.verifica_enigma2 === 'V') {
-          this.game.scene.stop('tela_cofre')
-          this.game.scene.start('cofre_aberto')
-        } else {
-          this.game.scene.stop('tela_cofre')
-          this.game.scene.start('sala_m1')
-        }
-      })
 
     this.alfabeto = [
       {
@@ -183,11 +172,25 @@ export default class telacofre extends Phaser.Scene {
             if (this.verificacao1 === 'V' && this.verificacao2 === 'V' && this.verificacao3 === 'V' && this.verificacao4 === 'V' && this.verificacao5 === 'V' && this.verificacao6 === 'V' && this.verificacao7 === 'V') {
               console.log('foi meu')
               this.game.verifica_enigma2 = 'V'
+            } else {
+              this.game.verifica_enigma2 = 'F'
             }
           }
         }
         )
     })
+
+    this.add.image(400, 400, 'seta_down')
+      .setInteractive()
+      .on('pointerdown', () => {
+        if (this.game.verifica_enigma2 === 'V') {
+          this.game.scene.stop('tela_cofre')
+          this.game.scene.start('cofre_aberto')
+        } else {
+          this.game.scene.stop('tela_cofre')
+          this.game.scene.start('sala_m1')
+        }
+      })
   }
 
   update () {
