@@ -24,8 +24,8 @@ export default class aberturajogo extends Phaser.Scene {
   create () {
     // Adição de imagens
     this.add.image(400, 225, 'tela_inicio')
-    this.add.image(400, 150, 'room_riddle')
-    this.add.image(720, 380, 'login')
+    this.add.image(400, 230, 'room_riddle')
+    // this.add.image(720, 380, 'login')
 
     // Provisório
     this.pular = this.add.image(80, 380, 'setajump')
@@ -45,7 +45,7 @@ export default class aberturajogo extends Phaser.Scene {
     })
     // Temporizador para animação ocorrer a tempo antes de fechar a cena
     this.timer = 0
-    this.jogar = this.add.sprite(390, 380, 'botao_start')
+    this.jogar = this.add.sprite(390, 410, 'botao_start')
       .setInteractive()
       .on('pointerdown', () => {
         this.jogar.anims.play('botao')
