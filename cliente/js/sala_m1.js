@@ -64,14 +64,14 @@ export default class salam1 extends Phaser.Scene {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('sala_m2')
       })
-    this.add.image(620, 390, 'mesa')
-    this.add.image(670, 328, 'cofre')
+    this.add.image(620, 400, 'mesa')
+    this.add.image(670, 334, 'cofre')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('tela_cofre')
       })
-    this.add.image(600, 337, 'papel_enrolado')
+    this.add.image(615, 343, 'papel_enrolado')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('sala_m1')
@@ -90,8 +90,6 @@ export default class salam1 extends Phaser.Scene {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('gaveta4')
       })
-
-
   }
 
   update () { }
