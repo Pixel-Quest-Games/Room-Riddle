@@ -9,6 +9,7 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('inventario', '../assets/imagens/inventario.png')
     this.load.image('seta_e', '../assets/imagens/seta_esquerda.png')
     this.load.image('seta_d', '../assets/imagens/seta_direita.png')
+    this.load.image('estante_livros', '../assets/imagens/estante_livros.png')
   }
 
   create () {
@@ -16,6 +17,7 @@ export default class salam2 extends Phaser.Scene {
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 50, 'inventario')
+    this.add.image(150, 290, 'estante_livros')
 
     // Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')
