@@ -78,7 +78,12 @@ export default class salam1 extends Phaser.Scene {
         this.game.scene.start('tela_papel')
       })
     this.add.image(116, 319, 'suporte_bonecos')
-    this.add.image(545, 332, 'walkie_talkie')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.scene.stop('sala_m1')
+        this.scene.start('enigma2')
+      })
+    this.add.image(560, 338, 'walkie_talkie')
     this.add.image(100, 395, 'estante')
     this.add.image(116, 309, 'boneco_homem_p')
     this.add.image(99, 309, 'boneco_mulher_p')

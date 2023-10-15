@@ -4,7 +4,7 @@ export default class gaveta4 extends Phaser.Scene {
     super('gaveta4')
   }
 
-  preload() {
+  preload () {
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.spritesheet('gaveta_aberta', '../assets/imagens/gaveta4_ss.png', {
       frameWidth: 800,
@@ -18,10 +18,10 @@ export default class gaveta4 extends Phaser.Scene {
     })
   }
 
-  create() {
+  create () {
     this.add.sprite(400, 225, 'gaveta_aberta')
 
-/*
+    /*
     this.alfabeto = [
       {
         numero: '1',
@@ -188,11 +188,11 @@ export default class gaveta4 extends Phaser.Scene {
     this.add.image(400, 430, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
-          this.game.scene.stop('gaveta4')
-          this.game.scene.start('sala_m1')
-        })
+        this.game.scene.stop('gaveta4')
+        this.game.scene.start('sala_m1')
+      })
   }
 
-  update() {
+  update () {
   }
 }
