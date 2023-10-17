@@ -11,6 +11,9 @@ export default class aberturajogo extends Phaser.Scene {
     this.load.image('setajump', '../assets/imagens/setajump.png')
     this.load.image('login', '../assets/imagens/icone_login.png')
 
+    this.load.audio('musica', '../assets/audios/musica.mp3')
+    this.load.audio('botaoefeito', '../assets/audios/sound_button.mp3')
+
     this.load.spritesheet('botao_start', '../assets/imagens/botao_start.png', {
       frameWidth: 192,
       frameHeight: 192
@@ -22,6 +25,12 @@ export default class aberturajogo extends Phaser.Scene {
   }
 
   create () {
+    // Adição de música de fundo
+    this.trilha = this.sound.add('musica')
+    this.botaoefeito = this.sound.add('botaoefeito')
+    this.trilha.loop = true
+    this.trilha.play()
+
     // Adição de imagens
     this.add.image(400, 225, 'tela_inicio')
     this.add.image(400, 230, 'room_riddle')
@@ -49,6 +58,7 @@ export default class aberturajogo extends Phaser.Scene {
       .setInteractive()
       .on('pointerdown', () => {
         this.jogar.anims.play('botao')
+        this.botaoefeito.play()
         this.timedEvent = this.time.addEvent({
           delay: 1000,
           callback: this.countdown,
@@ -74,10 +84,11 @@ export default class aberturajogo extends Phaser.Scene {
 
   // Temporizador para animação do botão
   countdown () {
-    this.timer -= 0.5
+    this.timer -= 2
     if (this.timer <= 0) {
       this.jogar.destroy()
       this.timedEvent.destroy()
+      this.trilha.stop()
       this.game.scene.stop('abertura_jogo')
       this.game.scene.start('tela_sala')
     }

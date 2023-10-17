@@ -11,9 +11,11 @@ export default class telasala extends Phaser.Scene {
       frameWidth: 64,
       frameHeight: 128
     })
+    this.load.audio('efeitoporta', '../assets/audios/porta_efeito.mp3')
   }
 
   create () {
+    this.efeitoporta = this.sound.add('efeitoporta')
     this.add.image(400, 225, 'tela_salas')
     // Criação dos objetos sala
     this.salas = [
@@ -91,6 +93,7 @@ export default class telasala extends Phaser.Scene {
 
             if (this.game.jogadores.primeiro === this.game.socket.id) {
               item.botao.anims.play('porta')
+              this.efeitoporta.play()
               this.timer = 0
               this.timedEvent = this.time.addEvent({
                 delay: 1000,
@@ -100,6 +103,7 @@ export default class telasala extends Phaser.Scene {
               })
             } else if (this.game.jogadores.segundo === this.game.socket.id) {
               item.botao.anims.play('porta')
+              this.efeitoporta.play()
               this.timer = 0
               this.timedEvent = this.time.addEvent({
                 delay: 1000,
