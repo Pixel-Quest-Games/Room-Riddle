@@ -5,11 +5,11 @@ export default class telafinal extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('background', '../assets/imagens/you_win.png')
+    this.load.image('fim', '../assets/imagens/you_win.png')
   }
 
   create () {
-    this.add.image(400, 225, 'background')
+    this.add.image(400, 225, 'fim')
   }
 
   update () { }

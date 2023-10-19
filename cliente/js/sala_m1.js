@@ -5,8 +5,8 @@ export default class salam1 extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('parede_mia', '../assets/imagens/parede_mia.png')
-    this.load.image('porta_final', '../assets/imagens/porta_final.png')
+    this.load.image('parede_mia1', '../assets/imagens/parede_mia1.png')
+    // this.load.image('porta_final', '../assets/imagens/porta_final.png')
     this.load.image('porta_final_aberta', '../assets/imagens/porta_final_aberta.png')
     this.load.image('inventario', '../assets/imagens/inventario.png')
     this.load.image('seta_e', '../assets/imagens/seta_esquerda.png')
@@ -16,7 +16,7 @@ export default class salam1 extends Phaser.Scene {
     this.load.image('cofre', '../assets/imagens/cofre.png')
     this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
     this.load.image('walkie_talkie', '../assets/imagens/walkie_talkie.png')
-    this.load.image('estante', '../assets/imagens/estante.png')
+    // this.load.image('estante', '../assets/imagens/estante.png')
     this.load.image('suporte_bonecos', '../assets/imagens/suporte_bonecos.png')
     this.load.image('boneco_homem_p', '../assets/imagens/boneco_homem_p.png')
     this.load.image('boneco_mulher_p', '../assets/imagens/boneco_mulher_p.png')
@@ -30,7 +30,7 @@ export default class salam1 extends Phaser.Scene {
   }
 
   create () {
-    this.add.image(400, 225, 'parede_mia')
+    this.add.image(400, 225, 'parede_mia1')
     if (this.game.verifica_enigma === 'V') {
       this.add.image(400, 323, 'porta_final_aberta')
         .setInteractive()
@@ -38,9 +38,9 @@ export default class salam1 extends Phaser.Scene {
           this.game.scene.stop('sala_m1')
           this.game.scene.start('tela_final')
         })
-    } else {
-      this.add.image(400, 323, 'porta_final')
-    }
+    } // else {
+      // this.add.image(400, 323, 'porta_final')
+    // }
 
     this.add.image(400, 50, 'inventario')
 
@@ -77,19 +77,19 @@ export default class salam1 extends Phaser.Scene {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('tela_papel')
       })
-    this.add.image(116, 319, 'suporte_bonecos')
+    this.add.image(114, 314, 'suporte_bonecos')
       .setInteractive()
       .on('pointerdown', () => {
         this.scene.stop('sala_m1')
         this.scene.start('enigma2')
       })
     this.add.image(560, 338, 'walkie_talkie')
-    this.add.image(100, 395, 'estante')
-    this.add.image(116, 309, 'boneco_homem_p')
-    this.add.image(99, 309, 'boneco_mulher_p')
+    // this.add.image(100, 395, 'estante')
+    this.add.image(114, 304, 'boneco_homem_p')
+    this.add.image(97, 304, 'boneco_mulher_p')
     this.add.image(275, 418, 'vaso1')
 
-    this.add.image(100, 420, 'abre_gaveta')
+    this.add.image(100, 412, 'abre_gaveta')
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('sala_m1')
