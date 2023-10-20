@@ -27,9 +27,11 @@ export default class salam1 extends Phaser.Scene {
       'webfont',
       'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
     )
+    this.load.audio('glitch', '../assets/audios/glitch_radio.mp3')
   }
 
   create () {
+    this.glitch = this.sound.add('glitch')
     this.add.image(400, 225, 'parede_mia1')
     if (this.game.verifica_enigma === 'V') {
       this.add.image(400, 323, 'porta_final_aberta')
@@ -39,7 +41,7 @@ export default class salam1 extends Phaser.Scene {
           this.game.scene.start('tela_final')
         })
     } // else {
-      // this.add.image(400, 323, 'porta_final')
+    // this.add.image(400, 323, 'porta_final')
     // }
 
     this.add.image(400, 50, 'inventario')
@@ -61,15 +63,23 @@ export default class salam1 extends Phaser.Scene {
     this.add.image(775, 225, 'seta_d')
       .setInteractive()
       .on('pointerdown', () => {
-        this.game.scene.stop('sala_m1')
-        this.game.scene.start('sala_m2')
+        this.cameras.main.fadeOut(100, 0, 0, 0)
+        this.timedEvent = this.time.addEvent({
+          delay: 1000,
+          callback: this.countdown,
+          callbackScope: this,
+          loop: true
+        })
+        
       })
     this.add.image(620, 400, 'mesa')
     this.add.image(670, 334, 'cofre')
       .setInteractive()
       .on('pointerdown', () => {
-        this.game.scene.stop('sala_m1')
-        this.game.scene.start('tela_cofre')
+        if (this.game.enigmacofrecompleto === true) { console.log('enigma completo') } else {
+          this.game.scene.stop('sala_m1')
+          this.game.scene.start('tela_cofre')
+        }
       })
     this.add.image(615, 343, 'papel_enrolado')
       .setInteractive()
@@ -84,6 +94,10 @@ export default class salam1 extends Phaser.Scene {
         this.scene.start('enigma2')
       })
     this.add.image(560, 338, 'walkie_talkie')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.glitch.play()
+      })
     // this.add.image(100, 395, 'estante')
     this.add.image(114, 304, 'boneco_homem_p')
     this.add.image(97, 304, 'boneco_mulher_p')
@@ -95,6 +109,20 @@ export default class salam1 extends Phaser.Scene {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('gaveta4')
       })
+    this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+      this.time.delayedCall(1000, () => {
+        this.scene.start('phaser-logo')
+      })
+    })
+  }
+
+  countdown () {
+    this.timer -= 2
+    if (this.timer <= 0) {
+      this.game.scene.stop('sala_m1')
+      this.cameras.mais.fadeIn(100, 0, 0, 0)
+      this.game.scene.start('sala_m2')
+    }
   }
 
   update () { }

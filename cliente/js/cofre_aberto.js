@@ -12,13 +12,17 @@ export default class cofreaberto extends Phaser.Scene {
 
   create () {
     this.add.image(400, 225, 'cofre_aberto')
-    this.add.image(400, 200, 'boneco_entidade')
-
-    this.add.image(400, 400, 'seta_down')
+    this.entidade = this.add.image(400, 200, 'boneco_entidade')
       .setInteractive()
       .on('pointerdown', () => {
-        this.game.scene.stop('cofre_aberto')
-        this.game.scene.start('sala_m1')
+        this.entidade.setVisible(false)
+        this.add.image(400, 400, 'seta_down')
+          .setInteractive()
+          .on('pointerdown', () => {
+            this.game.scene.stop('cofre_aberto')
+            this.game.scene.start('sala_m1')
+          })
+        this.game.enigmacofrecompleto = true
       })
   }
 

@@ -19,17 +19,22 @@ export default class telapapel extends Phaser.Scene {
     }
     )
     this.add.image(400, 225, 'papel')
-    this.add.text(150, 180, '01010110 01000001 01001100', {
+    this.add.text(240, 150, '01010110 01000001 ', {
       fontFamily: 'fonte_papel',
       fontSize: '20px',
       fill: 'black'
     })
-    this.add.text(150, 220, '01000101 01001110 01000100', {
+    this.add.text(240, 200, '01001100 01000101 ', {
       fontFamily: 'fonte_papel',
       fontSize: '20px',
       fill: 'black'
     })
-    this.add.text(330, 260, '01001111', {
+    this.add.text(240, 250, '01001110 01000100', {
+      fontFamily: 'fonte_papel',
+      fontSize: '20px',
+      fill: 'black'
+    })
+    this.add.text(330, 300, '01001111', {
       fontFamily: 'fonte_papel',
       fontSize: '20px',
       fill: 'black'
