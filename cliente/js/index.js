@@ -21,6 +21,28 @@ class Game extends Phaser.Game {
   constructor () {
     super(config)
 
+    let iceServers
+    if (window.location.host === 'feira-de-jogos.sj.ifsc.edu.br') {
+      iceServers = [
+        {
+          urls: 'stun:feira-de-jogos.sj.ifsc.edu.br'
+        },
+        {
+          urls: 'turns:feira-de-jogos.sj.ifsc.edu.br',
+          username: 'adcipt',
+          credential: 'adcipt20232'
+        }
+      ]
+    } else {
+      iceServers = [
+        {
+          urls: 'stun:stun.l.google.com:19302'
+        }
+      ]
+    }
+    this.iceServers = { iceServers }
+    this.audio = document.querySelector('audio')
+
     // Adição de cenas que o index vai acessar
     this.socket = io()
     this.socket.on('connect', () => {

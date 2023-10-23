@@ -63,14 +63,8 @@ export default class salam1 extends Phaser.Scene {
     this.add.image(775, 225, 'seta_d')
       .setInteractive()
       .on('pointerdown', () => {
-        this.cameras.main.fadeOut(100, 0, 0, 0)
-        this.timedEvent = this.time.addEvent({
-          delay: 1000,
-          callback: this.countdown,
-          callbackScope: this,
-          loop: true
-        })
-        
+        this.game.scene.stop('sala_m1')
+        this.game.scene.start('sala_m2')
       })
     this.add.image(620, 400, 'mesa')
     this.add.image(670, 334, 'cofre')
@@ -109,20 +103,6 @@ export default class salam1 extends Phaser.Scene {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('gaveta4')
       })
-    this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
-      this.time.delayedCall(1000, () => {
-        this.scene.start('phaser-logo')
-      })
-    })
-  }
-
-  countdown () {
-    this.timer -= 2
-    if (this.timer <= 0) {
-      this.game.scene.stop('sala_m1')
-      this.cameras.mais.fadeIn(100, 0, 0, 0)
-      this.game.scene.start('sala_m2')
-    }
   }
 
   update () { }

@@ -84,36 +84,52 @@ export default class telasala extends Phaser.Scene {
       item.botao = this.add.sprite(item.x, item.y, 'porta')
         .setInteractive()
         .on('pointerdown', () => {
-          this.game.socket.emit('entrar-na-sala', item.numero)
-          this.aguarde = this.add.text(this.game.config.width / 20, this.game.config.height / 20, 'Conectando...')
-
-          this.game.socket.on('jogadores', (jogadores) => {
-            this.game.jogadores = jogadores
-            console.log(jogadores)
-
-            if (this.game.jogadores.primeiro === this.game.socket.id) {
-              item.botao.anims.play('porta')
-              this.efeitoporta.play()
-              this.timer = 0
-              this.timedEvent = this.time.addEvent({
-                delay: 1000,
-                callback: this.countdown,
-                callbackScope: this,
-                loop: true
-              })
-            } else if (this.game.jogadores.segundo === this.game.socket.id) {
-              item.botao.anims.play('porta')
-              this.efeitoporta.play()
-              this.timer = 0
-              this.timedEvent = this.time.addEvent({
-                delay: 1000,
-                callback: this.countdown2,
-                callbackScope: this,
-                loop: true
-              })
-            }
+          /*
+          this.salas.forEach((porta) => {
+            item.botao.destroy()
           })
+          */
+
+          this.game.sala = item.numero
+          this.game.socket.emit('entrar-na-sala', this.game.sala)
+          this.aguarde = this.add.text(this.game.config.width / 20, this.game.config.height / 20, 'Conectando...')
         })
+    })
+
+    this.game.socket.on('jogadores', (jogadores) => {
+      this.game.jogadores = jogadores
+      console.log(jogadores)
+      //  this.game.item = item.numero
+      if (this.game.jogadores.primeiro === this.game.socket.id) {
+        // item.botao.anims.play('porta')
+        this.efeitoporta.play()
+        this.timer = 0
+        this.timedEvent = this.time.addEvent({
+          delay: 1000,
+          callback: this.countdown,
+          callbackScope: this,
+          loop: true
+        })
+        // this.mensagem.setText('Aguardando segundo jogador...')
+        navigator.mediaDevices
+          .getUserMedia({ video: false, audio: true })
+          .then((stream) => {
+            this.game.midias = stream
+          })
+          .catch((error) => console.error(error))
+      } else if (this.game.jogadores.segundo === this.game.socket.id) {
+        // item.botao.anims.play('porta')
+        this.efeitoporta.play()
+        this.timer = 0
+        this.timedEvent = this.time.addEvent({
+          delay: 1000,
+          callback: this.countdown2,
+          callbackScope: this,
+          loop: true
+        })
+        // this.mensagem.setText('Conectando...')
+      }
+      this.game.jogadores = jogadores
     })
   }
 
