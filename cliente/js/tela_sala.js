@@ -84,12 +84,7 @@ export default class telasala extends Phaser.Scene {
       item.botao = this.add.sprite(item.x, item.y, 'porta')
         .setInteractive()
         .on('pointerdown', () => {
-          /*
-          this.salas.forEach((porta) => {
-            item.botao.destroy()
-          })
-          */
-
+          item.botao.anims.play('porta')
           this.game.sala = item.numero
           this.game.socket.emit('entrar-na-sala', this.game.sala)
           this.aguarde = this.add.text(this.game.config.width / 20, this.game.config.height / 20, 'Conectando...')

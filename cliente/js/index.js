@@ -68,6 +68,87 @@ class Game extends Phaser.Game {
     this.inventario = {}
     this.verifica_enigma = 'F'
     this.verifica_enigma2 = 'F'
+    // Lista de objetos para inventario
+    this.inventarioLista = [
+      {
+        numero: '1',
+        x: 84,
+        y: 210,
+        objeto: undefined
+      },
+      {
+        numero: '2',
+        x: 242,
+        y: 210,
+        objeto: undefined
+      },
+      {
+        numero: '3',
+        x: 406,
+        y: 210,
+        objeto: undefined
+      },
+      {
+        numero: '4',
+        x: 568,
+        y: 210,
+        objeto: undefined
+      },
+      {
+        numero: '5',
+        x: 714,
+        y: 210,
+        objeto: undefined
+      },
+      {
+        numero: '6',
+        x: 84,
+        y: 354,
+        objeto: undefined
+      },
+      {
+        numero: '7',
+        x: 242,
+        y: 354,
+        objeto: undefined
+      },
+      {
+        numero: '8',
+        x: 406,
+        y: 354,
+        objeto: undefined
+      },
+      {
+        numero: '9',
+        x: 568,
+        y: 354,
+        objeto: undefined
+      },
+      {
+        numero: '10',
+        x: 714,
+        y: 354,
+        objeto: undefined
+      }
+    ]
+    // Ações para a lista
+    this.adicionaItem(imagem => {
+      this.inventarioLista.every(element => {
+        if (this.inventarioLista.objeto === undefined) {
+          this.inventarioLista.objeto.push(imagem)
+          if (this.inventarioLista.objeto === undefined) {
+            return false
+          } else {
+            return true
+          }
+        }
+      });
+    })
+    this.removeItem() => {
+      array.forEach(element => {
+
+      });
+    }
   }
 }
 
