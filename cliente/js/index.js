@@ -8,6 +8,7 @@ import salam1 from './sala_m1.js'
 import salam2 from './sala_m2.js'
 import salam3 from './sala_m3.js'
 import salam4 from './sala_m4.js'
+import salas1 from './sala_s1.js'
 import enigmafinal from './enigma_final.js'
 import telacofre from './tela_cofre.js'
 import telapapel from './tela_papel.js'
@@ -57,6 +58,7 @@ class Game extends Phaser.Game {
     this.scene.add('sala_m2', salam2)
     this.scene.add('sala_m3', salam3)
     this.scene.add('sala_m4', salam4)
+    this.scene.add('sala_s1', salas1)
     this.scene.add('tela_cofre', telacofre)
     this.scene.add('tela_papel', telapapel)
     this.scene.add('cofre_aberto', cofreaberto)
@@ -69,7 +71,7 @@ class Game extends Phaser.Game {
     this.verifica_enigma = 'F'
     this.verifica_enigma2 = 'F'
     // Lista de objetos para inventario
-    this.inventarioLista = [
+    /* this.inventarioLista = [
       {
         numero: '1',
         x: 84,
@@ -148,7 +150,7 @@ class Game extends Phaser.Game {
       array.forEach(element => {
 
       });
-    }
+    } */
   }
 }
 
