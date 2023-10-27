@@ -133,6 +133,7 @@ export default class telasala extends Phaser.Scene {
       this.game.remoteConnection.onicecandidate = ({ candidate }) =>
         candidate && this.game.socket.emit('candidate', this.game.sala, candidate)
 
+      // eslint-disable-next-line no-return-assign
       this.game.remoteConnection.ontrack = ({ streams: [midia] }) =>
         this.game.audio.srcObject = midia
 
