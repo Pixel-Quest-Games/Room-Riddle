@@ -12,6 +12,11 @@ export default class telafinal extends Phaser.Scene {
   create () {
     this.add.image(400, 225, 'fim')
     this.add.image(400, 380, 'botao_login')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('tela_final')
+        this.game.scene.start('recompensa')
+      })
   }
 
   update () { }

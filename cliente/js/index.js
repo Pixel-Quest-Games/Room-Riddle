@@ -16,6 +16,7 @@ import cofreaberto from './cofre_aberto.js'
 import gaveta4 from './tela_gaveta4.js'
 import enigma2 from './tela_en2.js'
 import enigma5 from './tela_en5.js'
+import recompensa from './tela_recompensa.js'
 
 /* Definição do objeto Game */
 class Game extends Phaser.Game {
@@ -68,6 +69,7 @@ class Game extends Phaser.Game {
     this.scene.add('gaveta4', gaveta4)
     this.scene.add('enigma2', enigma2)
     this.scene.add('enigma5', enigma5)
+    this.scene.add('recompensa', recompensa)
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
