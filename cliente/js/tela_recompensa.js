@@ -4,12 +4,12 @@ export default class recompensa extends Phaser.Scene {
     super('recompensa')
   }
 
-  preload () {
+  preload() {
     this.load.image('recompensa', '../assets/imagens/tela_recompensa.png')
     this.load.image('botao_login', '../assets/imagens/botao_login.png')
   }
 
-  create () {
+  create() {
     this.add.image(this.game.config.width * 0.5, this.game.config.height * 0.5, 'recompensa')
 
     this.posicao = ''
@@ -71,8 +71,8 @@ export default class recompensa extends Phaser.Scene {
               this.senha.text = this.senhaTextoBase + senhaOculta
             }
           }
-          if (this.usuarioDigitado.length === 4 && this.senhaDigitada === 4) {
-            this.enviar = this.add.text(this.game.config.width * 0.5, this.game.config.height * 0.5, '[ENVIAR]', {
+          if (this.usuarioDigitado.length === 4 && this.senhaDigitada.length === 4) {
+            this.enviar = this.add.text(450, 300, '[ENVIAR]', {
               fontFamily: 'monospace',
               font: '64px Courier',
               fill: '#ffffff'
@@ -123,5 +123,5 @@ export default class recompensa extends Phaser.Scene {
       })
   }
 
-  update () { }
+  update() { }
 }
