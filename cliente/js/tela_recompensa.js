@@ -82,18 +82,48 @@ export default class recompensa extends Phaser.Scene {
                 axios.post('https://feira-de-jogos.sj.ifsc.edu.br/api/v1/credito', {
                   id: this.usuarioDigitado,
                   senha: this.senhaDigitada,
-                  jogo: 1, // Jogo Pesadelos Lúcidos
-                  valor: 100 // Tijolinhos
+                  jogo: this.game.id,
+                  valor: this.game.valor
                 })
                   .then((response) => {
-                    console.log(response)
+                    if (response.status === 200) {
+                      this.enviar.destroy()
+                      this.tempo = 2
+                      this.relogio = this.time.addEvent({
+                        delay: 1000,
+                        callback: () => {
+                          this.tempo--
+                          if (this.tempo === 0) {
+                            this.relogio.destroy()
+                            this.scene.stop('recompensa')
+                            this.scene.start('aberturajogo')
+                          }
+                        },
+                        callbackScope: this,
+                        loop: true
+                      })
+                    }
                   })
                   .catch((error) => {
+                    if (error.response.status === 401) {
+                      this.enviar.text = '[401]'
+                      this.tempo = 2
+                      this.relogio = this.time.addEvent({
+                        delay: 1000,
+                        callback: () => {
+                          this.tempo--
+                          if (this.tempo === 0) {
+                            this.relogio.destroy()
+                            this.enviar.destroy()
+                          }
+                        },
+                        callbackScope: this,
+                        loop: true
+                      })
+                    }
                     console.error(error)
                   })
               })
-          } else {
-            if (this.enviar) this.enviar.destroy()
           }
         })
     })
@@ -106,12 +136,12 @@ export default class recompensa extends Phaser.Scene {
       .setInteractive()
       .on('pointerdown', () => {
         if (this.posicao === 'usuário') {
-          if (this.usuarioDigitado > 0) {
+          if (this.usuarioDigitado.length > 0) {
             this.usuarioDigitado = this.usuarioDigitado.slice(0, -1)
             this.usuario.text = this.usuarioTextoBase + this.usuarioDigitado
           }
         } else if (this.posicao === 'senha') {
-          if (this.senhaDigitada > 0) {
+          if (this.senhaDigitada.length > 0) {
             this.senhaDigitada = this.senhaDigitada.slice(0, -1)
             let senhaOculta = ''
             Array.from(this.senhaDigitada).forEach(numero => {
@@ -120,8 +150,17 @@ export default class recompensa extends Phaser.Scene {
             this.senha.text = this.senhaTextoBase + senhaOculta
           }
         }
+
+        if (this.usuarioDigitado.length !== 4 || this.senhaDigitada.length !== 4) {
+          try {
+            this.enviar.destroy()
+          } catch (error) {
+            console.error(error)
+          }
+        }
       })
   }
+
 
   update() { }
 }
