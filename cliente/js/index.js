@@ -75,6 +75,8 @@ class Game extends Phaser.Game {
     this.inventario = {}
     this.verifica_enigma = 'F'
     this.verifica_enigma2 = 'F'
+    this.verifica_enigma3 = 'F'
+
     // Lista de objetos para inventario
     /* this.inventarioLista = [
       {

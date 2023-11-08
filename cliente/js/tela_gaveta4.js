@@ -134,7 +134,7 @@ export default class gaveta4 extends Phaser.Scene {
       item.objeto = this.add.sprite(item.x, item.y, 'alfabetomini')
         .setInteractive()
         .on('pointerdown', () => {
-          if (this.game.verifica_enigma2 === 'F') {
+          if (this.game.verifica_enigma3 === 'F') {
             this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
 
             if (this.alfabeto[index].numero === '1') {
@@ -328,16 +328,20 @@ export default class gaveta4 extends Phaser.Scene {
         )
     })
 
-    this.verificacao2 = 'V'
-
     this.add.image(400, 400, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
-        if (this.game.verifica_enigma2 === 'V') {
+        if (this.game.verifica_enigma3 === 'V') {
+          /* this.alfabeto.disableBody(true, true) */
           this.gavetaAberta.setFrame(1)
-          this.gavetaAberta.disableBody(true, true)
+          this.add.image(400, 400, 'seta_down')
+            .setInteractive()
+            .on('pointerdown', () => {
+              this.game.scene.stop('gaveta4')
+              this.game.scene.start('sala_m1')
+            })
         } else {
-          this.game.scene.stop('tela_cofre')
+          this.game.scene.stop('gaveta4')
           this.game.scene.start('sala_m1')
         }
       })
