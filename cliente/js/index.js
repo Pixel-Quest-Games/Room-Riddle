@@ -9,7 +9,11 @@ import salam2 from './sala_m2.js'
 import salam3 from './sala_m3.js'
 import salam4 from './sala_m4.js'
 import salas1 from './sala_s1.js'
-import enigmafinal from './enigma_final.js'
+import salas2 from './sala_s2.js'
+import salas3 from './sala_s3.js'
+import salas4 from './sala_s4.js'
+import enigmafinal from './enigma_final_mia.js'
+import enigmafinals from './enigma_final_sebastian.js'
 import telacofre from './tela_cofre.js'
 import telapapel from './tela_papel.js'
 import cofreaberto from './cofre_aberto.js'
@@ -59,10 +63,14 @@ class Game extends Phaser.Game {
     this.scene.add('tela_final', telafinal)
     this.scene.add('sala_m1', salam1)
     this.scene.add('enigma_final', enigmafinal)
+    this.scene.add('enigma_finals', enigmafinals)
     this.scene.add('sala_m2', salam2)
     this.scene.add('sala_m3', salam3)
     this.scene.add('sala_m4', salam4)
     this.scene.add('sala_s1', salas1)
+    this.scene.add('sala_s2', salas2)
+    this.scene.add('sala_s3', salas3)
+    this.scene.add('sala_s4', salas4)
     this.scene.add('tela_cofre', telacofre)
     this.scene.add('tela_papel', telapapel)
     this.scene.add('cofre_aberto', cofreaberto)
@@ -73,9 +81,11 @@ class Game extends Phaser.Game {
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
-    this.verifica_enigma = 'F'
+    this.verifica_enigmaf_m = 'F'
+    this.verifica_enigmaf_s = 'F'
     this.verifica_enigma2 = 'F'
     this.verifica_enigma3 = 'F'
+    this.verifica_enigma4 = 'F'
 
     // Lista de objetos para inventario
     /* this.inventarioLista = [

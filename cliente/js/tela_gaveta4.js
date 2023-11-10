@@ -4,13 +4,10 @@ export default class gaveta4 extends Phaser.Scene {
     super('gaveta4')
   }
 
-  preload() {
+  preload () {
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
-    this.load.spritesheet('gaveta_aberta', '../assets/imagens/gaveta4_ss.png', {
-      frameWidth: 800,
-      frameHeight: 450
-    })
-
+    this.load.image('gaveta4_f', '../assets/imagens/gaveta4_f.png')
+    this.load.image('gaveta4_a', '../assets/imagens/gaveta4_a.png')
     this.load.image('botao', '../assets/imagens/botao_cofre.png')
     this.load.spritesheet('alfabetomini', '../assets/imagens/alfabeto_mini_24_30.png', {
       frameWidth: 48,
@@ -18,8 +15,8 @@ export default class gaveta4 extends Phaser.Scene {
     })
   }
 
-  create() {
-    this.gavetaAberta = this.add.sprite(400, 225, 'gaveta_aberta')
+  create () {
+    this.add.image(400, 225, 'gaveta4_f')
 
     this.alfabeto = [
       {
@@ -332,8 +329,7 @@ export default class gaveta4 extends Phaser.Scene {
       .setInteractive()
       .on('pointerdown', () => {
         if (this.game.verifica_enigma3 === 'V') {
-          /* this.alfabeto.disableBody(true, true) */
-          this.gavetaAberta.setFrame(1)
+          this.add.image(400, 225, 'gaveta4_a')
           this.add.image(400, 400, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {
@@ -347,6 +343,6 @@ export default class gaveta4 extends Phaser.Scene {
       })
   }
 
-  update() {
+  update () {
   }
 }

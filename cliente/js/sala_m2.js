@@ -4,7 +4,7 @@ export default class salam2 extends Phaser.Scene {
     super('sala_m2')
   }
 
-  preload () {
+  preload() {
     this.load.image('parede_mia', '../assets/imagens/parede_mia.png')
     this.load.image('inventario', '../assets/imagens/inventario.png')
     this.load.image('seta_e', '../assets/imagens/seta_esquerda.png')
@@ -15,13 +15,11 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('provisorio', '../assets/imagens/provisorio.png')
   }
 
-  create () {
+  create() {
     // eslint-disable-next-line no-unused-expressions
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 50, 'inventario')
-    this.add.image(300, 200, 'rasgo')
-    this.add.image(150, 291, 'estante_livros')
     this.add.image(600, 200, 'janela')
 
     this.add.image(185, 410, 'provisorio')
@@ -30,6 +28,8 @@ export default class salam2 extends Phaser.Scene {
         this.game.scene.stop('sala_m2')
         this.game.scene.start('enigma5')
       })
+
+    this.add.image(150, 291, 'estante_livros')
 
     // Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')
@@ -45,7 +45,11 @@ export default class salam2 extends Phaser.Scene {
         this.game.scene.stop('sala_m2')
         this.game.scene.start('sala_m3')
       })
+
+    if (this.game.verifica_enigma4 === 'V') {
+      this.add.image(300, 200, 'rasgo')
+    }
   }
 
-  update () { }
+  update() { }
 }

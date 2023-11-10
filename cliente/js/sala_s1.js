@@ -4,17 +4,20 @@ export default class salas1 extends Phaser.Scene {
     super('sala_s1')
   }
 
-  preload () {
-    this.load.image('parede_mia', '../assets/imagens/parede_mia.png')
+  preload() {
+    this.load.image('parede_sebas', '../assets/imagens/parede_sebas.png')
     this.load.image('inventario', '../assets/imagens/inventario.png')
     this.load.image('seta_e', '../assets/imagens/seta_esquerda.png')
     this.load.image('seta_d', '../assets/imagens/seta_direita.png')
+    this.load.image('porta_final_aberta_s', '../assets/imagens/porta_final_aberta.png')
+    this.load.image('porta_final', '../assets/imagens/porta_final.png')
+    this.load.image('enigma_finals', '../assets/imagens/enigma_final.png')
   }
 
-  create () {
+  create() {
     // eslint-disable-next-line no-unused-expressions
     this.game.inventario
-    this.add.image(400, 225, 'parede_mia')
+    this.add.image(400, 225, 'parede_sebas')
     this.add.image(400, 50, 'inventario')
 
     if (this.game.jogadores.segundo === this.game.socket.id) {
@@ -39,7 +42,40 @@ export default class salas1 extends Phaser.Scene {
         })
         .catch((error) => console.error(error))
     }
+
+    this.add.image(400, 323, 'porta_final')
+
+    if (this.game.verifica_enigmaf_s === 'V') {
+      this.add.image(400, 323, 'porta_final_aberta_s')
+        .setInteractive()
+        .on('pointerdown', () => {
+          this.game.scene.stop('sala_s1')
+          this.game.scene.start('tela_final')
+        })
+    }
+
+    this.add.image(400, 175, 'enigma_finals')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_s1')
+        this.game.scene.start('enigma_finals')
+      })
+
+    // Configuração do carrosel de cenas
+    this.add.image(25, 225, 'seta_e')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_s1')
+        this.game.scene.start('sala_s4')
+      })
+
+    this.add.image(775, 225, 'seta_d')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_s1')
+        this.game.scene.start('sala_s2')
+      })
   }
 
-  update () { }
+  update() { }
 }

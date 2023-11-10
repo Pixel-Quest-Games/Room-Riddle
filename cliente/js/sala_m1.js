@@ -33,7 +33,7 @@ export default class salam1 extends Phaser.Scene {
   create () {
     this.glitch = this.sound.add('glitch')
     this.add.image(400, 225, 'parede_mia1')
-    if (this.game.verifica_enigma === 'V') {
+    if (this.game.verifica_enigmaf_m === 'V') {
       this.add.image(400, 323, 'porta_final_aberta')
         .setInteractive()
         .on('pointerdown', () => {
