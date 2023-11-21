@@ -13,6 +13,7 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('janela', '../assets/imagens/janela.png')
     this.load.image('rasgo', '../assets/imagens/parede_rasgada.png')
     this.load.image('provisorio', '../assets/imagens/provisorio.png')
+    this.load.image('arbusto9', '../assets/imagens/arbusto_flor9.png')
   }
 
   create() {
@@ -21,6 +22,7 @@ export default class salam2 extends Phaser.Scene {
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 50, 'inventario')
     this.add.image(600, 200, 'janela')
+    this.add.image(279, 404, 'arbusto9')
 
     this.add.image(185, 410, 'provisorio')
       .setInteractive()
