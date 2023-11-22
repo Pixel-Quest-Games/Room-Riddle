@@ -20,8 +20,8 @@ export default class salam1 extends Phaser.Scene {
     this.load.image('suporte_bonecos', '../assets/imagens/suporte_bonecos.png')
     this.load.image('boneco_homem_p', '../assets/imagens/boneco_homem_p.png')
     this.load.image('boneco_mulher_p', '../assets/imagens/boneco_mulher_p.png')
-    this.load.image('vaso1', '../assets/imagens/vaso1.png')
     this.load.image('abre_gaveta', '../assets/imagens/abre_gaveta.png')
+    this.load.image('girassol', '../assets/imagens/vaso_c_girassol.png')
 
     this.load.script(
       'webfont',
@@ -45,6 +45,7 @@ export default class salam1 extends Phaser.Scene {
     // }
 
     this.add.image(400, 50, 'inventario')
+    this.add.image(260, 397, 'girassol')
 
     this.add.image(400, 175, 'enigma_final')
       .setInteractive()
@@ -95,7 +96,6 @@ export default class salam1 extends Phaser.Scene {
     // this.add.image(100, 395, 'estante')
     this.add.image(114, 304, 'boneco_homem_p')
     this.add.image(97, 304, 'boneco_mulher_p')
-    this.add.image(275, 418, 'vaso1')
 
     this.add.image(100, 412, 'abre_gaveta')
       .setInteractive()
