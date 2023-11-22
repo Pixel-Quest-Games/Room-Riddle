@@ -27,7 +27,7 @@ class Game extends Phaser.Game {
   constructor () {
     super(config)
 
-    this.id = 1 // Jogo Pesadelos Lúcidos, id 1
+    this.id = 4 // Jogo Pesadelos Lúcidos, id 1
     this.valor = 100 // crédito padrão em Tijolinhos quando termina o jogo
 
     let iceServers
@@ -81,6 +81,17 @@ class Game extends Phaser.Game {
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
+    this.inventario1 = false
+    this.inventario2 = false
+    this.inventario3 = false
+    this.inventario4 = false
+    this.inventario5 = false
+    this.inventario6 = false
+    this.inventario7 = false
+    this.inventario8 = false
+    this.inventario9 = false
+    this.inventario10 = false
+
     this.verifica_enigmaf_m = 'F'
     this.verifica_enigmaf_s = 'F'
     this.verifica_enigma2 = 'F'

@@ -22,6 +22,7 @@ export default class cofreaberto extends Phaser.Scene {
             this.game.scene.stop('cofre_aberto')
             this.game.scene.start('sala_m1')
           })
+        this.game.inventario1 = true
         this.game.enigmacofrecompleto = true
       })
   }

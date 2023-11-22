@@ -22,6 +22,8 @@ export default class salam1 extends Phaser.Scene {
     this.load.image('boneco_mulher_p', '../assets/imagens/boneco_mulher_p.png')
     this.load.image('abre_gaveta', '../assets/imagens/abre_gaveta.png')
     this.load.image('girassol', '../assets/imagens/vaso_c_girassol.png')
+    this.load.image('entidade', '../assets/imagens/entidade52.png')
+    this.load.image('seleciona', '../assets/imagens/seleciona.png')
 
     this.load.script(
       'webfont',
@@ -35,16 +37,23 @@ export default class salam1 extends Phaser.Scene {
     this.add.image(400, 225, 'parede_mia1')
     if (this.game.verifica_enigmaf_m === 'V') {
       this.add.image(400, 323, 'porta_final_aberta')
-        .setInteractive()
+      /* .setInteractive()
         .on('pointerdown', () => {
           this.game.scene.stop('sala_m1')
           this.game.scene.start('tela_final')
-        })
+        }) */
     } // else {
     // this.add.image(400, 323, 'porta_final')
     // }
 
     this.add.image(400, 50, 'inventario')
+    if (this.game.inventario1 === true) {
+      this.add.image(121, 50, 'entidade')
+        .setInteractive
+        .on('pointerdown', () => {
+          this.add.image(121, 50, 'seleciona')
+        })
+    }
     this.add.image(260, 397, 'girassol')
 
     this.add.image(400, 175, 'enigma_final')

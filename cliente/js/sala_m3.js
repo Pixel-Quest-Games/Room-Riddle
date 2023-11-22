@@ -11,6 +11,7 @@ export default class salam3 extends Phaser.Scene {
     this.load.image('seta_d', '../assets/imagens/seta_direita.png')
     this.load.image('escrivaninha', '../assets/imagens/escrivaninha.png')
     this.load.image('arbusto95', '../assets/imagens/arbusto_flor95.png')
+    this.load.image('entidade', '../assets/imagens/entidade52.png')
   }
 
   create () {
@@ -18,6 +19,9 @@ export default class salam3 extends Phaser.Scene {
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 50, 'inventario')
+    if (this.game.inventario1 === true) {
+      this.add.image(121, 50, 'entidade')
+    }
     this.add.image(630, 386, 'escrivaninha')
     this.add.image(442, 404, 'arbusto95')
 

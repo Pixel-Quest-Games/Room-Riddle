@@ -14,6 +14,7 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('rasgo', '../assets/imagens/parede_rasgada.png')
     this.load.image('provisorio', '../assets/imagens/provisorio.png')
     this.load.image('arbusto9', '../assets/imagens/arbusto_flor9.png')
+    this.load.image('entidade', '../assets/imagens/entidade52.png')
   }
 
   create() {
@@ -21,9 +22,11 @@ export default class salam2 extends Phaser.Scene {
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(400, 50, 'inventario')
+    if (this.game.inventario1 === true) {
+      this.add.image(121, 50, 'entidade')
+    }
     this.add.image(600, 200, 'janela')
     this.add.image(279, 404, 'arbusto9')
-
     this.add.image(185, 410, 'provisorio')
       .setInteractive()
       .on('pointerdown', () => {
