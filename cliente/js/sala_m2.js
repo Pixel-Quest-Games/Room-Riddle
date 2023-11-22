@@ -15,6 +15,7 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('provisorio', '../assets/imagens/provisorio.png')
     this.load.image('arbusto9', '../assets/imagens/arbusto_flor9.png')
     this.load.image('entidade', '../assets/imagens/entidade52.png')
+    this.load.image('painel', '../assets/imagens/painel_1989.png')
   }
 
   create() {
@@ -35,6 +36,12 @@ export default class salam2 extends Phaser.Scene {
       })
 
     this.add.image(150, 291, 'estante_livros')
+    this.add.image(180, 200, 'painel')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_m2')
+        this.game.scene.start('enigma6')
+      })
 
     // Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')
