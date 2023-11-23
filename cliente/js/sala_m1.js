@@ -49,10 +49,6 @@ export default class salam1 extends Phaser.Scene {
     this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {
       this.add.image(121, 50, 'entidade')
-        .setInteractive
-        .on('pointerdown', () => {
-          this.add.image(121, 50, 'seleciona')
-        })
     }
     this.add.image(260, 397, 'girassol')
 
