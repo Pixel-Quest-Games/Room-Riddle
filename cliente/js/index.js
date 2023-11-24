@@ -21,7 +21,7 @@ import gaveta4 from './tela_gaveta4.js'
 import enigma2 from './tela_en2.js'
 import enigma5 from './tela_en5.js'
 import recompensa from './tela_recompensa.js'
-import enigma6 from './enigma6.js'
+import enigma6 from './tela_en6.js'
 
 /* Definição do objeto Game */
 class Game extends Phaser.Game {
@@ -98,7 +98,9 @@ class Game extends Phaser.Game {
     this.verifica_enigmaf_s = 'F'
     this.verifica_enigma2 = 'F'
     this.verifica_enigma3 = 'F'
-    this.verifica_enigma4 = 'F'
+    this.verifica_enigma4 = 'V'
+    this.verifica_enigma5 = 'F'
+    this.verifica_enigma6 = 'F'
 
     // Lista de objetos para inventario
     /* this.inventarioLista = [

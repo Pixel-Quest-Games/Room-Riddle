@@ -1,31 +1,28 @@
 // eslint-disable-next-line no-undef
-export default class enigma5 extends Phaser.Scene {
+export default class enigma6 extends Phaser.Scene {
   constructor () {
-    super('enigma5')
+    super('enigma6')
   }
 
   preload () {
+    this.load.image('tela', '../assets/imagens/tela_1989.png')
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
-    this.load.spritesheet('enigma5', '../assets/imagens/tela_en5_ss.png', {
-      frameWidth: 800,
-      frameHeight: 450
-    })
-
-    this.load.image('botao', '../assets/imagens/botao_cofre.png')
-    this.load.spritesheet('img_en5', '../assets/imagens/img_en5_ss.png', {
-      frameWidth: 88,
-      frameHeight: 88
+    this.load.spritesheet('numeros', '../assets/imagens/numeros_ss.png', {
+      frameWidth: 100,
+      frameHeight: 254
     })
   }
 
   create () {
-    this.add.sprite(400, 225, 'enigma5')
+    // eslint-disable-next-line no-unused-expressions
+
+    this.add.image(400, 225, 'tela')
 
     this.numeros = [
       {
         numero: '1',
-        x: 294,
-        y: 106
+        x: 130,
+        y: 225
       },
 
       {
@@ -46,10 +43,10 @@ export default class enigma5 extends Phaser.Scene {
     ]
 
     this.numeros.forEach((item, index) => {
-      item.objeto = this.add.sprite(item.x, item.y, 'img_en5')
+      item.objeto = this.add.sprite(item.x, item.y, 'numeros')
         .setInteractive()
         .on('pointerdown', () => {
-          if (this.game.verifica_enigma5 === 'F') {
+          if (this.game.verifica_enigma6 === 'F') {
             this.numeros[index].objeto.setFrame(this.numeros[index].objeto.frame.name + 1)
 
             if (this.numeros[index].numero === '1') {
@@ -90,23 +87,23 @@ export default class enigma5 extends Phaser.Scene {
             }
             if (this.verificacao1 === 'V' && this.verificacao2 === 'V' && this.verificacao3 === 'V' && this.verificacao4 === 'V') {
               console.log('foi meu')
-              this.game.verifica_enigma5 = 'V'
+              this.game.verifica_enigma6 = 'V'
             } else {
-              this.game.verifica_enigma5 = 'F'
+              this.game.verifica_enigma6 = 'F'
             }
           }
         }
         )
     })
 
-    this.add.image(400, 430, 'seta_down')
+    // Configuração do carrosel de cenas
+    this.add.image(400, 400, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
-        this.game.scene.stop('enigma5')
+        this.game.scene.stop('enigma6')
         this.game.scene.start('sala_m2')
       })
   }
 
-  update () {
-  }
+  update () { }
 }
