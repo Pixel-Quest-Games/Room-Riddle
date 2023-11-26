@@ -96,7 +96,7 @@ export default class recompensa extends Phaser.Scene {
                           if (this.tempo === 0) {
                             this.relogio.destroy()
                             this.scene.stop('recompensa')
-                            this.scene.start('aberturajogo')
+                            this.scene.start('abertura_jogo')
                           }
                         },
                         callbackScope: this,

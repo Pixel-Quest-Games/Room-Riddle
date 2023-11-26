@@ -4,7 +4,7 @@ export default class salam1 extends Phaser.Scene {
     super('sala_m1')
   }
 
-  preload () {
+  preload() {
     this.load.image('parede_mia1', '../assets/imagens/parede_mia1.png')
     // this.load.image('porta_final', '../assets/imagens/porta_final.png')
     this.load.image('porta_final_aberta', '../assets/imagens/porta_final_aberta.png')
@@ -32,19 +32,17 @@ export default class salam1 extends Phaser.Scene {
     this.load.audio('glitch', '../assets/audios/glitch_radio.mp3')
   }
 
-  create () {
+  create() {
     this.glitch = this.sound.add('glitch')
     this.add.image(400, 225, 'parede_mia1')
     if (this.game.verifica_enigmaf_m === 'V') {
       this.add.image(400, 323, 'porta_final_aberta')
-      /* .setInteractive()
+        .setInteractive()
         .on('pointerdown', () => {
           this.game.scene.stop('sala_m1')
           this.game.scene.start('tela_final')
-        }) */
-    } // else {
-    // this.add.image(400, 323, 'porta_final')
-    // }
+        })
+    }
 
     this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {
@@ -110,5 +108,5 @@ export default class salam1 extends Phaser.Scene {
       })
   }
 
-  update () { }
+  update() { }
 }

@@ -71,12 +71,14 @@ export default class salam2 extends Phaser.Scene {
       this.objeto.setFrame(this.objeto.frame.name + 1)
     }
 
-    this.add.image(180, 200, 'painel')
-      .setInteractive()
-      .on('pointerdown', () => {
-        this.game.scene.stop('sala_m2')
-        this.game.scene.start('enigma6')
-      })
+    if (this.game.verifica_enigma5 === 'V') {
+      this.add.image(180, 200, 'painel')
+        .setInteractive()
+        .on('pointerdown', () => {
+          this.game.scene.stop('sala_m2')
+          this.game.scene.start('enigma6')
+        })
+    }
   }
 
   update() { }
