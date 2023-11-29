@@ -22,6 +22,8 @@ import enigma2 from './tela_en2.js'
 import enigma5 from './tela_en5.js'
 import recompensa from './tela_recompensa.js'
 import enigma6 from './tela_en6.js'
+import enigma7 from './tela_en7.js'
+import enigma8 from './tela_en8.js'
 import papel5 from './tela_papel5.js'
 
 /* Definição do objeto Game */
@@ -29,8 +31,8 @@ class Game extends Phaser.Game {
   constructor () {
     super(config)
 
-    this.id = 4 // Jogo Pesadelos Lúcidos, id 1
-    this.valor = 100 // crédito padrão em Tijolinhos quando termina o jogo
+    this.id = 4
+    this.valor = 100
 
     let iceServers
     if (window.location.host === 'feira-de-jogos.sj.ifsc.edu.br') {
@@ -82,6 +84,8 @@ class Game extends Phaser.Game {
     this.scene.add('enigma5', enigma5)
     this.scene.add('recompensa', recompensa)
     this.scene.add('enigma6', enigma6)
+    this.scene.add('enigma7', enigma7)
+    this.scene.add('enigma8', enigma8)
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
@@ -98,11 +102,18 @@ class Game extends Phaser.Game {
 
     this.verifica_enigmaf_m = 'F'
     this.verifica_enigmaf_s = 'F'
+    this.verifica_enigma1 = 'F'
     this.verifica_enigma2 = 'F'
     this.verifica_enigma3 = 'F'
     this.verifica_enigma4 = 'V'
     this.verifica_enigma5 = 'F'
     this.verifica_enigma6 = 'F'
+    this.verifica_enigma7 = 'F'
+    this.verifica_enigma8 = 'F'
+    this.verifica_enigma9 = 'F'
+    this.verifica_enigma10 = 'F'
+    this.verifica_enigma11 = 'F'
+    this.verifica_enigma12 = 'F'
 
     // Lista de objetos para inventario
     /* this.inventarioLista = [

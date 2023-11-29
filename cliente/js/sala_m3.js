@@ -12,18 +12,28 @@ export default class salam3 extends Phaser.Scene {
     this.load.image('escrivaninha', '../assets/imagens/escrivaninha.png')
     this.load.image('arbusto95', '../assets/imagens/arbusto_flor95.png')
     this.load.image('entidade', '../assets/imagens/entidade52.png')
+    this.load.image('estante', '../assets/imagens/estante_m3.png')
+    this.load.image('cxlivro', '../assets/imagens/caixa_livro.png')
   }
 
   create () {
     // eslint-disable-next-line no-unused-expressions
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
+    this.add.image(180, 376, 'estante')
     this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {
       this.add.image(121, 50, 'entidade')
     }
     this.add.image(630, 386, 'escrivaninha')
-    this.add.image(442, 404, 'arbusto95')
+    this.add.image(88, 257, 'arbusto95')
+
+    this.add.image(210, 436, 'cxlivro')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_m3')
+        this.game.scene.start('enigma8')
+      })
 
     // Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')

@@ -103,7 +103,7 @@ export default class telacofre extends Phaser.Scene {
       item.botao = this.add.image(item.x, item.y, 'botao')
         .setInteractive()
         .on('pointerdown', () => {
-          if (this.game.verifica_enigma2 === 'F') {
+          if (this.game.verifica_enigma1 === 'F') {
             this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
 
             if (this.botoes[index].numero === '1') {
@@ -171,9 +171,9 @@ export default class telacofre extends Phaser.Scene {
             }
             if (this.verificacao1 === 'V' && this.verificacao2 === 'V' && this.verificacao3 === 'V' && this.verificacao4 === 'V' && this.verificacao5 === 'V' && this.verificacao6 === 'V' && this.verificacao7 === 'V') {
               console.log('foi meu')
-              this.game.verifica_enigma2 = 'V'
+              this.game.verifica_enigma1 = 'V'
             } else {
-              this.game.verifica_enigma2 = 'F'
+              this.game.verifica_enigma1 = 'F'
             }
           }
         }

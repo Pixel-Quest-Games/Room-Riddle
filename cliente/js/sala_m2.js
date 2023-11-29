@@ -15,6 +15,7 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('arbusto9', '../assets/imagens/arbusto_flor9.png')
     this.load.image('entidade', '../assets/imagens/entidade52.png')
     this.load.image('painel', '../assets/imagens/painel_1989.png')
+    this.load.image('cxcofre', '../assets/imagens/caixa_cofre.png')
     this.load.spritesheet('estante_livros', '../assets/imagens/estante_livros.png', {
       frameWidth: 160,
       frameHeight: 320
@@ -62,11 +63,11 @@ export default class salam2 extends Phaser.Scene {
       this.objeto.setFrame(this.objeto.frame.name + 1)
     }
     if (this.game.verifica_enigma6 === 'V') {
-      this.add.image(185, 410, 'provisorio')
+      this.add.image(115, 420, 'cxcofre')
         .setInteractive()
         .on('pointerdown', () => {
           this.game.scene.stop('sala_m2')
-          this.game.scene.start('enigma5')
+          this.game.scene.start('enigma7')
         })
       this.objeto.setFrame(this.objeto.frame.name + 1)
     }
