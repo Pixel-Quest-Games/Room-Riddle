@@ -84,6 +84,7 @@ const precacheResources = [
   '.imagens/seta_down_enigma_fina.png',
   '.imagens/seta_down_enigma_final.png',
   '.imagens/seta_down.png',
+  '.imagens/seta_cima.png',
   '.imagens/seta_esq.png',
   '.imagens/seta_esquerd.png',
   '.imagens/seta_esquerda.png',

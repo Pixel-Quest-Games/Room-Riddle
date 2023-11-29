@@ -105,7 +105,7 @@ class Game extends Phaser.Game {
     this.verifica_enigma1 = 'F'
     this.verifica_enigma2 = 'F'
     this.verifica_enigma3 = 'F'
-    this.verifica_enigma4 = 'V'
+    this.verifica_enigma4 = 'F'
     this.verifica_enigma5 = 'F'
     this.verifica_enigma6 = 'F'
     this.verifica_enigma7 = 'F'

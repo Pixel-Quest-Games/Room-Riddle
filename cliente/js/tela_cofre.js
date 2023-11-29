@@ -183,7 +183,7 @@ export default class telacofre extends Phaser.Scene {
     this.add.image(400, 400, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
-        if (this.game.verifica_enigma2 === 'V') {
+        if (this.game.verifica_enigma1 === 'V') {
           this.game.scene.stop('tela_cofre')
           this.game.scene.start('cofre_aberto')
         } else {
