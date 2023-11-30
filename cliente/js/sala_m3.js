@@ -14,6 +14,7 @@ export default class salam3 extends Phaser.Scene {
     this.load.image('entidade', '../assets/imagens/entidade52.png')
     this.load.image('estante', '../assets/imagens/estante_m3.png')
     this.load.image('cxlivro', '../assets/imagens/caixa_livro.png')
+    this.load.image('abregaveta', '../assets/imagens/prov_gavetaesc.png')
   }
 
   create () {
@@ -26,6 +27,12 @@ export default class salam3 extends Phaser.Scene {
       this.add.image(121, 50, 'entidade')
     }
     this.add.image(630, 386, 'escrivaninha')
+    this.add.image(706, 366, 'abregaveta')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_m3')
+        this.game.scene.start('enigma9')
+      })
     this.add.image(88, 257, 'arbusto95')
 
     this.add.image(210, 436, 'cxlivro')

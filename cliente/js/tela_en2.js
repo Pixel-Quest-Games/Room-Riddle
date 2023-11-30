@@ -91,13 +91,13 @@ export default class enigma2 extends Phaser.Scene {
         this.game.scene.stop('enigma2')
         this.game.scene.start('sala_m1')
         if (this.seleciona1.visible === true) {
-          this.seleciana1.setVisible(false)
+          this.seleciona1.setVisible(false)
         }
         if (this.seleciona2.visible === true) {
-          this.seleciana2.setVisible(false)
+          this.seleciona2.setVisible(false)
         }
         if (this.seleciona3.visible === true) {
-          this.seleciana3.setVisible(false)
+          this.seleciona3.setVisible(false)
         }
       })
     this.touch1 = this.add.image(295, 185, 'touch')

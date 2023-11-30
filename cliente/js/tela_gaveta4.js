@@ -9,6 +9,7 @@ export default class gaveta4 extends Phaser.Scene {
     this.load.image('gaveta4_f', '../assets/imagens/gaveta4_f.png')
     this.load.image('gaveta4_a', '../assets/imagens/gaveta4_a.png')
     this.load.image('botao', '../assets/imagens/botao_cofre.png')
+    this.load.image('livro', '../assets/imagens/livrod.png')
     this.load.spritesheet('alfabetomini', '../assets/imagens/alfabeto_mini_24_30.png', {
       frameWidth: 48,
       frameHeight: 60
@@ -330,6 +331,7 @@ export default class gaveta4 extends Phaser.Scene {
       .on('pointerdown', () => {
         if (this.game.verifica_enigma3 === 'V') {
           this.add.image(400, 225, 'gaveta4_a')
+          this.add.image(218, 360, 'livro')
           this.add.image(400, 400, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {

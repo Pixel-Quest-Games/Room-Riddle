@@ -9,6 +9,10 @@ export default class enigma7 extends Phaser.Scene {
     this.load.image('tela7', '../assets/imagens/caixa_cofre_fechada.png')
     this.load.image('tela7a', '../assets/imagens/caixa_cofre_aberta.png')
     this.load.image('botao', '../assets/imagens/botao_cofre.png')
+    this.load.image('frasco', '../assets/imagens/frasco.png')
+    this.load.image('frascoinv', '../assets/imagens/frascop.png')
+    this.load.image('pena', '../assets/imagens/pena.png')
+    this.load.image('penainv', '../assets/imagens/penap.png')
     this.load.spritesheet('alfabetomini', '../assets/imagens/alfabeto_mini_24_30.png', {
       frameWidth: 48,
       frameHeight: 60
@@ -175,6 +179,8 @@ export default class enigma7 extends Phaser.Scene {
       .on('pointerdown', () => {
         if (this.game.verifica_enigma7 === 'V') {
           this.add.image(400, 225, 'tela7a')
+          this.add.image(148, 330, 'frasco')
+          this.add.image(648, 150, 'pena')
           this.add.image(400, 400, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {
