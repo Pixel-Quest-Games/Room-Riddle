@@ -243,7 +243,12 @@ export default class enigma9 extends Phaser.Scene {
       .on('pointerdown', () => {
         if (this.game.verifica_enigma9 === 'V') {
           this.add.image(400, 225, 'tela9a')
-          this.add.image(260, 300, 'lupa')
+          this.lupa = this.add.image(260, 300, 'lupa')
+            .setInteractive()
+            .on('pointerdown', () => {
+              this.lupa.setVisible(false)
+              this.game.inventario8 = true
+            })
           this.add.image(400, 400, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {

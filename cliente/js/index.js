@@ -32,6 +32,7 @@ import papel5 from './tela_papel5.js'
 import papel12 from './tela_papel12.js'
 // eslint-disable-next-line camelcase
 import tela_papelf from './tela_papelf.js'
+import enigmadpsbandeiras from './enigmadpsbandeiras.js'
 
 /* Definição do objeto Game */
 class Game extends Phaser.Game {
@@ -99,6 +100,7 @@ class Game extends Phaser.Game {
     this.scene.add('tela_caixa', telacaixa)
     this.scene.add('quadros', quadros)
     this.scene.add('tela_papelf', tela_papelf)
+    this.scene.add('enigmadpsbandeiras', enigmadpsbandeiras)
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
@@ -120,8 +122,8 @@ class Game extends Phaser.Game {
     this.verifica_enigma3 = 'F'
     this.verifica_enigma4 = 'F'
     this.verifica_enigma5 = 'F'
-    this.verifica_enigma6 = 'F'
-    this.verifica_enigma7 = 'F'
+    this.verifica_enigma6 = 'V'
+    this.verifica_enigma7 = 'V'
     this.verifica_enigma8 = 'F'
     this.verifica_enigma9 = 'F'
     this.verifica_enigma10 = 'F'

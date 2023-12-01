@@ -57,6 +57,12 @@ export default class salam2 extends Phaser.Scene {
     if (this.game.inventario6 === true) {
       this.add.image(432, 50, 'penap')
     }
+    if (this.game.inventario7 === true) {
+      this.add.image(495, 50, 'livrosp')
+    }
+    if (this.game.inventario8 === true) {
+      this.add.image(555, 50, 'lupap')
+    }
     this.add.image(600, 200, 'janela')
     this.add.image(279, 404, 'arbusto9')
 

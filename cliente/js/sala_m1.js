@@ -28,6 +28,8 @@ export default class salam1 extends Phaser.Scene {
     this.load.image('livrop', '../assets/imagens/livro1p.png')
     this.load.image('frascop', '../assets/imagens/frascop.png')
     this.load.image('penap', '../assets/imagens/penap.png')
+    this.load.image('livrosp', '../assets/imagens/livro_sp.png')
+    this.load.image('lupap', '../assets/imagens/lupap.png')
     this.load.script(
       'webfont',
       'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
@@ -59,6 +61,12 @@ export default class salam1 extends Phaser.Scene {
     }
     if (this.game.inventario6 === true) {
       this.add.image(432, 50, 'penap')
+    }
+    if (this.game.inventario7 === true) {
+      this.add.image(495, 50, 'livrosp')
+    }
+    if (this.game.inventario8 === true) {
+      this.add.image(555, 50, 'lupap')
     }
     this.add.image(260, 397, 'girassol')
 

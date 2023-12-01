@@ -4,7 +4,7 @@ export default class enigma8 extends Phaser.Scene {
     super('enigma8')
   }
 
-  preload() {
+  preload () {
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.image('tela8', '../assets/imagens/caixa_en8f.png')
     this.load.image('tela8a', '../assets/imagens/caixa_en8a.png')
@@ -22,51 +22,25 @@ export default class enigma8 extends Phaser.Scene {
     this.load.image('pena', '../assets/imagens/pena.png')
     this.load.image('touchtg', '../assets/imagens/touch_giga.png')
     this.load.image('livro_s', '../assets/imagens/livro_s.png')
+    this.load.image('tela_papel', '../assets/imagens/tela_papel.png')
   }
 
-  create() {
-    this.add.image(400, 225, 'tela8')
+  create () {
+    this.add.image(400, 225, 'tela8a')
 
     this.lampada = this.add.image(630, 300, 'lampada')
     this.papel = this.add.image(160, 142, 'papel')
-
+    this.add.image(400, 50, 'inventario')
+    this.seleciona5 = this.add.image(370, 50, 'seleciona').setVisible(false)
+    this.seleciona6 = this.add.image(432, 50, 'seleciona').setVisible(false)
     this.add.image(400, 430, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
+        this.seleciona5.setVisible(false)
+        this.seleciona6.setVisible(false)
         this.game.scene.stop('enigma8')
         this.game.scene.start('sala_m3')
       })
-    this.add.image(400, 20, 'cima')
-      .setInteractive()
-      .on('pointerdown', () => {
-        this.add.image(400, 225, 'tela8a')
-        this.lampada.setVisible(true)
-        this.papel.setVisible(true)
-        this.add.image(400, 430, 'seta_down')
-          .setInteractive()
-          .on('pointerdown', () => {
-            if (this.game.verifica_enigma8 === 'V') {
-              this.add.image(400, 225, 'livro_s')
-              this.lampada.setVisible(false)
-              this.papel.setVisible(false)
-            } else {
-              this.add.image(400, 430, 'seta_down')
-                .setInteractive()
-                .on('pointerdown', () => {
-                  this.add.image(400, 225, 'tela8')
-                  this.add.image(400, 430, 'seta_down')
-                    .setInteractive()
-                    .on('pointerdown', () => {
-                      this.game.scene.stop('enigma8')
-                      this.game.scene.start('sala_m3')
-                    })
-                })
-            }
-          })
-      })
-    /* this.add.image(400, 225, 'tela8a')
-
-    this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {
       this.add.image(121, 50, 'entidade')
     }
@@ -77,7 +51,7 @@ export default class enigma8 extends Phaser.Scene {
       this.add.image(370, 50, 'frascop')
         .setInteractive()
         .on('pointerdown', () => {
-          this.seleciona5 = this.add.image(370, 50, 'seleciona')
+          this.seleciona5.setVisible(true)
           this.seleciona6.setVisible(false)
         })
     }
@@ -85,7 +59,7 @@ export default class enigma8 extends Phaser.Scene {
       this.add.image(432, 50, 'penap')
         .setInteractive()
         .on('pointerdown', () => {
-          this.seleciona6 = this.add.image(432, 50, 'seleciona')
+          this.seleciona6.setVisible(true)
           this.seleciona5.setVisible(false)
         })
     }
@@ -101,26 +75,24 @@ export default class enigma8 extends Phaser.Scene {
           this.penaenig = true
         }
         if (this.penaenig === true && this.frascoenig === true) {
-          this.game.enigma8 = 'V'
+          this.game.verifica_enigma8 = 'V'
+          this.add.image(400, 225, 'tela8')
+          this.livros = this.add.image(400, 225, 'livro_s')
+            .setInteractive()
+            .on('pointerdown', () => {
+              this.game.inventario7 = true
+              this.livros.setVisible(false)
+              this.add.image(400, 430, 'seta_down')
+                .setInteractive()
+                .on('pointerdown', () => {
+                  this.game.scene.stop('enigma8')
+                  this.game.scene.start('sala_m3')
+                })
+            })
         }
       })
-    this.add.image(400, 430, 'seta_down')
-      .setInteractive()
-      .on('pointerdown', () => {
-        this.add.image(400, 225, 'tela8')
-        this.seleciona5.setVisible(false)
-        this.seleciona6.setVisible(false)
-        this.add.image(400, 430, 'seta_down')
-          .setInteractive()
-          .on('pointerdown', () => {
-            this.game.scene.stop('enigma8')
-            this.game.scene.start('sala_m3')
-          })
-      })
-  }
-}) */
   }
 
-  update() {
+  update () {
   }
 }

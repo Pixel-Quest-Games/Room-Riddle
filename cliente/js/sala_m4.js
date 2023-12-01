@@ -42,7 +42,12 @@ export default class salam4 extends Phaser.Scene {
     if (this.game.inventario6 === true) {
       this.add.image(432, 50, 'penap')
     }
-
+    if (this.game.inventario7 === true) {
+      this.add.image(495, 50, 'livrosp')
+    }
+    if (this.game.inventario8 === true) {
+      this.add.image(555, 50, 'lupap')
+    }
     if (this.game.verifica_enigma11 === 'V') {
       this.add.image(140, 320, 'painel12')
       this.alfabeto = [
