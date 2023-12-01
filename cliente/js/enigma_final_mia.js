@@ -145,7 +145,7 @@ export default class enigmafinal extends Phaser.Scene {
             }
             // Fazer outro if pra ver se fez o enigma anterior!!!!! -> podem passar a resposta um para outro
             // Verificação pra ver se corresponde ao código
-            if (this.verificacao1 === 'V' && this.verificacao2 === 'V' && this.verificacao3 === 'V' && this.verificacao4 === 'V') {
+            if (this.verificacao1 === 'V' && this.verificacao2 === 'V' && this.verificacao3 === 'V' && this.verificacao4 === 'V' && this.game.verifica_enigma11 === 'V') {
               console.log('foi meu')
               // Ilumina letras para verde
               this.cliqueporta.play()

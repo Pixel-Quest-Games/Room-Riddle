@@ -36,13 +36,6 @@ export default class aberturajogo extends Phaser.Scene {
     this.add.image(400, 230, 'room_riddle')
     // this.add.image(720, 380, 'login')
 
-    // Provisório
-    this.pular = this.add.image(80, 380, 'setajump')
-      .setInteractive()
-      .on('pointerdown', () => {
-        this.game.scene.stop('abertura_jogo')
-        this.game.scene.start('sala_m1')
-      })
     // Animação do botão
     this.anims.create({
       key: 'botao',
