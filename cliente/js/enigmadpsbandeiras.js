@@ -9,9 +9,6 @@ export default class enigmadpsbandeiras extends Phaser.Scene {
     this.load.image('enigma_final_tela_cheia', '../assets/imagens/enigma_final_tela_cheia.png')
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.image('buttom_down', '../assets/imagens/seta_down_enigma_final.png')
-    this.load.image('vverde', '../assets/imagens/v_verde.png')
-    this.load.image('iverde', '../assets/imagens/i_verde.png')
-    this.load.image('averde', '../assets/imagens/a_verde.png')
     // this.load.audio('trilha', '../assets/audios/musica_fundo.mp3')
     this.load.spritesheet('alfabeto_spritesheet', '../assets/imagens/alfabeto_spritesheet.png', {
       frameWidth: 176,
@@ -32,8 +29,8 @@ export default class enigmadpsbandeiras extends Phaser.Scene {
       .setInteractive()
       .on('pointerdown', () => {
         // this.trilha.stop()
-        this.game.scene.stop('enigma_final')
-        this.game.scene.start('sala_m1')
+        this.game.scene.stop('enigmadpsbandeiras')
+        this.game.scene.start('sala_m3')
       })
     // Configuração dos locais
     this.alfabeto = [
@@ -89,14 +86,14 @@ export default class enigmadpsbandeiras extends Phaser.Scene {
     ]
 
     // Adição dos botoes e configuração da interatividade.
-    this.verificacao4 = 'V'
+    this.verificacao2 = 'V'
 
     this.botoes.forEach((item, index) => {
       item.botao = this.add.image(item.x, item.y, 'buttom_down')
         .setInteractive()
         .on('pointerdown', () => {
           // if(this.game.verifica_enigma = )
-          if (this.dpsbandeiras === true) {
+          if (this.game.verifica_enigma11 === 'V') {
             console.log('Enigma Feito')
           } else {
             this.alfabeto[index].objeto.setFrame(this.alfabeto[index].objeto.frame.name + 1)
@@ -122,6 +119,7 @@ export default class enigmadpsbandeiras extends Phaser.Scene {
                 console.log('falsooo')
                 this.verificacao2 = 'F'
               }
+              console.log(this.alfabeto[index].objeto.frame.name === null)
             }
             // Verifica terceira caixa
             if (this.botoes[index].numero === '3') {
@@ -150,9 +148,6 @@ export default class enigmadpsbandeiras extends Phaser.Scene {
               // Ilumina letras para verde
               this.game.verifica_enigma11 = 'V'
               console.log(this.game.verifica_enigma11)
-              this.alfabeto.forEach((index) => {
-                this.alfabeto[index].objeto.setVisible(false)
-              })
             }
           }
         })

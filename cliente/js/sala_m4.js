@@ -18,6 +18,7 @@ export default class salam4 extends Phaser.Scene {
     this.load.image('caixa2', '../assets/imagens/caixa.png')
     this.load.image('caixa3', '../assets/imagens/caixa.png')
     this.load.image('painel12', '../assets/imagens/painel_12.png')
+    this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
     this.load.spritesheet('alfabetom', '../assets/imagens/alfabetom.png', {
       frameWidth: 24,
       frameHeight: 30
@@ -47,6 +48,14 @@ export default class salam4 extends Phaser.Scene {
     }
     if (this.game.inventario8 === true) {
       this.add.image(555, 50, 'lupap')
+    }
+    if (this.game.inventario9 === true) {
+      this.add.image(618, 50, 'papel_enrolado')
+        .setInteractive()
+        .on('pointerdown', () => {
+          this.game.scene.stop('sala_m4')
+          this.game.scene.start('tela_papel9')
+        })
     }
     if (this.game.verifica_enigma11 === 'V') {
       this.add.image(140, 320, 'painel12')
