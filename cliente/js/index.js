@@ -25,6 +25,7 @@ import enigma6 from './tela_en6.js'
 import enigma7 from './tela_en7.js'
 import enigma8 from './tela_en8.js'
 import enigma9 from './tela_en9.js'
+import papel3 from './tela_papel3.js'
 import papel5 from './tela_papel5.js'
 import papel12 from './tela_papel12.js'
 
@@ -79,6 +80,7 @@ class Game extends Phaser.Game {
     this.scene.add('sala_s4', salas4)
     this.scene.add('tela_cofre', telacofre)
     this.scene.add('tela_papel', telapapel)
+    this.scene.add('tela_papel3', papel3)
     this.scene.add('tela_papel5', papel5)
     this.scene.add('tela_papel12', papel12)
     this.scene.add('cofre_aberto', cofreaberto)

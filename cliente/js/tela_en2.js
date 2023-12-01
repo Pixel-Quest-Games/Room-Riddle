@@ -304,6 +304,9 @@ export default class enigma2 extends Phaser.Scene {
         }
         if (this.homem_esp1.visible === true && this.entidade_esp2.visible === true && this.mulher_esp3.visible === true) {
           console.log('Enigma Feito')
+          this.game.verifica_enigma2 = 'V'
+          this.homem_esp1.setVisible(false)
+          this.entidade_esp2.setVisible(false)
         }
       })
   }

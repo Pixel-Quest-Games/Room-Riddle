@@ -97,8 +97,12 @@ export default class salam1 extends Phaser.Scene {
         this.glitch.play()
       })
     // this.add.image(100, 395, 'estante')
-    this.add.image(114, 304, 'boneco_homem_p')
-    this.add.image(97, 304, 'boneco_mulher_p')
+    if (this.game.verifica_enigma2 === 'V') {
+      this.add.image(131, 304, 'boneco_mulher_p')
+    } else {
+      this.add.image(114, 304, 'boneco_homem_p')
+      this.add.image(97, 304, 'boneco_mulher_p')
+    }
 
     this.add.image(100, 412, 'abre_gaveta')
       .setInteractive()
