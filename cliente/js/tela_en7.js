@@ -179,8 +179,18 @@ export default class enigma7 extends Phaser.Scene {
       .on('pointerdown', () => {
         if (this.game.verifica_enigma7 === 'V') {
           this.add.image(400, 225, 'tela7a')
-          this.add.image(148, 330, 'frasco')
-          this.add.image(648, 150, 'pena')
+          this.frasco = this.add.image(148, 330, 'frasco')
+            .setInteractive()
+            .on('pointerdown', () => {
+              this.game.inventario5 = true
+              this.frasco.setVisible(false)
+            })
+          this.pena = this.add.image(648, 150, 'pena')
+            .setInteractive()
+            .on('pointerdown', () => {
+              this.game.inventario6 = true
+              this.pena.setVisible(false)
+            })
           this.add.image(400, 400, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {

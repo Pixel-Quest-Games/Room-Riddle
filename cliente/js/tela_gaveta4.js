@@ -331,7 +331,12 @@ export default class gaveta4 extends Phaser.Scene {
       .on('pointerdown', () => {
         if (this.game.verifica_enigma3 === 'V') {
           this.add.image(400, 225, 'gaveta4_a')
-          this.add.image(218, 360, 'livro')
+          this.livro = this.add.image(218, 360, 'livro')
+            .setInteractive()
+            .on('pointerdown', () => {
+              this.game.inventario4 = true
+              this.livro.setVisible(false)
+            })
           this.add.image(400, 400, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {

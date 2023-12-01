@@ -16,6 +16,11 @@ export default class enigma8 extends Phaser.Scene {
     this.load.image('frascoinv', '../assets/imagens/frascop.png')
     this.load.image('pena', '../assets/imagens/pena.png')
     this.load.image('penainv', '../assets/imagens/penap.png')
+    this.load.image('inventario', '../assets/imagens/inventario.png')
+    this.load.image('seleciona', '../assets/imagens/seleciona.png')
+    this.load.image('frasco', '../assets/imagens/frasco.png')
+    this.load.image('pena', '../assets/imagens/pena.png')
+    this.load.image('touchtg', '../assets/imagens/touch_giga.png')
   }
 
   create() {
@@ -47,10 +52,50 @@ export default class enigma8 extends Phaser.Scene {
           this.add.image(400, 225, 'tela8a')
           this.add.image(630, 300, 'lampada')
           this.add.image(160, 142, 'papel')
+          this.add.image(400, 50, 'inventario')
+          if (this.game.inventario1 === true) {
+            this.add.image(121, 50, 'entidade')
+          }
+          if (this.game.inventario4 === true) {
+            this.add.image(307, 51, 'livrop')
+          }
+          if (this.game.inventario5 === true) {
+            this.add.image(370, 50, 'frascop')
+              .setInteractive()
+              .on('pointerdown', () => {
+                this.seleciona5 = this.add.image(370, 50, 'seleciona')
+                this.seleciona6.setVisible(false)
+              })
+          }
+          if (this.game.inventario6 === true) {
+            this.add.image(432, 50, 'penap')
+              .setInteractive()
+              .on('pointerdown', () => {
+                this.seleciona6 = this.add.image(432, 50, 'seleciona')
+                this.seleciona5.setVisible(false)
+              })
+          }
+          this.add.image(400, 240, 'touchtg')
+            .setInteractive()
+            .on('pointerdown', () => {
+              if (this.seleciona5.visible === true) {
+                this.add.image(220, 310, 'frasco')
+                this.frascoenig = true
+              }
+              if (this.seleciona6.visible === true) {
+                this.add.image(430, 280, 'pena')
+                this.penaenig = true
+              }
+              if (this.penaenig === true && this.frascoenig === true) {
+                this.game.enigma8 = 'V'
+              }
+            })
           this.add.image(400, 430, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {
               this.add.image(400, 225, 'tela8')
+              this.seleciona5.setVisible(false)
+              this.seleciona6.setVisible(false)
               this.add.image(400, 430, 'seta_down')
                 .setInteractive()
                 .on('pointerdown', () => {

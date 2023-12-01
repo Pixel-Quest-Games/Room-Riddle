@@ -15,6 +15,9 @@ export default class salam3 extends Phaser.Scene {
     this.load.image('estante', '../assets/imagens/estante_m3.png')
     this.load.image('cxlivro', '../assets/imagens/caixa_livro.png')
     this.load.image('abregaveta', '../assets/imagens/prov_gavetaesc.png')
+    this.load.image('livrop', '../assets/imagens/livro1p.png')
+    this.load.image('frascop', '../assets/imagens/frascop.png')
+    this.load.image('penap', '../assets/imagens/penap.png')
   }
 
   create () {
@@ -25,6 +28,15 @@ export default class salam3 extends Phaser.Scene {
     this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {
       this.add.image(121, 50, 'entidade')
+    }
+    if (this.game.inventario4 === true) {
+      this.add.image(307, 51, 'livrop')
+    }
+    if (this.game.inventario5 === true) {
+      this.add.image(370, 50, 'frascop')
+    }
+    if (this.game.inventario6 === true) {
+      this.add.image(432, 50, 'penap')
     }
     this.add.image(630, 386, 'escrivaninha')
     this.add.image(706, 366, 'abregaveta')

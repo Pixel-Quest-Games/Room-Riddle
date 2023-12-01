@@ -4,7 +4,7 @@ export default class salam1 extends Phaser.Scene {
     super('sala_m1')
   }
 
-  preload() {
+  preload () {
     this.load.image('parede_mia1', '../assets/imagens/parede_mia1.png')
     // this.load.image('porta_final', '../assets/imagens/porta_final.png')
     this.load.image('porta_final_aberta', '../assets/imagens/porta_final_aberta.png')
@@ -24,7 +24,9 @@ export default class salam1 extends Phaser.Scene {
     this.load.image('girassol', '../assets/imagens/vaso_c_girassol.png')
     this.load.image('entidade', '../assets/imagens/entidade52.png')
     this.load.image('seleciona', '../assets/imagens/seleciona.png')
-
+    this.load.image('livrop', '../assets/imagens/livro1p.png')
+    this.load.image('frascop', '../assets/imagens/frascop.png')
+    this.load.image('penap', '../assets/imagens/penap.png')
     this.load.script(
       'webfont',
       'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
@@ -32,7 +34,7 @@ export default class salam1 extends Phaser.Scene {
     this.load.audio('glitch', '../assets/audios/glitch_radio.mp3')
   }
 
-  create() {
+  create () {
     this.glitch = this.sound.add('glitch')
     this.add.image(400, 225, 'parede_mia1')
     if (this.game.verifica_enigmaf_m === 'V') {
@@ -47,6 +49,15 @@ export default class salam1 extends Phaser.Scene {
     this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {
       this.add.image(121, 50, 'entidade')
+    }
+    if (this.game.inventario4 === true) {
+      this.add.image(307, 51, 'livrop')
+    }
+    if (this.game.inventario5 === true) {
+      this.add.image(370, 50, 'frascop')
+    }
+    if (this.game.inventario6 === true) {
+      this.add.image(432, 50, 'penap')
     }
     this.add.image(260, 397, 'girassol')
 
@@ -112,5 +123,5 @@ export default class salam1 extends Phaser.Scene {
       })
   }
 
-  update() { }
+  update () { }
 }

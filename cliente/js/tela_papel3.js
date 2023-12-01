@@ -10,11 +10,11 @@ export default class telapapel3 extends Phaser.Scene {
   }
 
   create() {
-    this.load.image(400, 225, 'papel3')
+    this.add.image(400, 225, 'papel3')
     this.add.image(400, 395, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
-        this.game.scene.stop('tela_papel')
+        this.game.scene.stop('tela_papel3')
         this.game.scene.start('sala_m1')
       })
   }

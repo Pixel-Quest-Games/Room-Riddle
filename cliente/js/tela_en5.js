@@ -4,7 +4,7 @@ export default class enigma5 extends Phaser.Scene {
     super('enigma5')
   }
 
-  preload() {
+  preload () {
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.image('enigma5', '../assets/imagens/tela_en5_1.png')
     this.load.image('enigma5_2', '../assets/imagens/tela_en5_2.png')
@@ -16,7 +16,7 @@ export default class enigma5 extends Phaser.Scene {
     })
   }
 
-  create() {
+  create () {
     this.add.image(400, 225, 'enigma5')
 
     this.numeros = [
@@ -122,6 +122,6 @@ export default class enigma5 extends Phaser.Scene {
       })
   }
 
-  update() {
+  update () {
   }
 }

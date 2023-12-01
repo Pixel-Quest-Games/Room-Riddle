@@ -11,6 +11,9 @@ export default class salam4 extends Phaser.Scene {
     this.load.image('seta_d', '../assets/imagens/seta_direita.png')
     this.load.image('arbusto8', '../assets/imagens/arbusto83.png')
     this.load.image('entidade', '../assets/imagens/entidade52.png')
+    this.load.image('livrop', '../assets/imagens/livro1p.png')
+    this.load.image('frascop', '../assets/imagens/frascop.png')
+    this.load.image('penap', '../assets/imagens/penap.png')
   }
 
   create () {
@@ -22,7 +25,15 @@ export default class salam4 extends Phaser.Scene {
     if (this.game.inventario1 === true) {
       this.add.image(121, 50, 'entidade')
     }
-
+    if (this.game.inventario4 === true) {
+      this.add.image(307, 51, 'livrop')
+    }
+    if (this.game.inventario5 === true) {
+      this.add.image(370, 50, 'frascop')
+    }
+    if (this.game.inventario6 === true) {
+      this.add.image(432, 50, 'penap')
+    }
     // Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')
       .setInteractive()
