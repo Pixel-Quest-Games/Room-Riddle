@@ -28,6 +28,7 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('touch', '../assets/imagens/invisivel_p_touch.png')
     this.load.image('frascop', '../assets/imagens/frascop.png')
     this.load.image('penap', '../assets/imagens/penap.png')
+    this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
     this.load.spritesheet('estante_livros', '../assets/imagens/estante_livros.png', {
       frameWidth: 160,
       frameHeight: 320
@@ -62,6 +63,14 @@ export default class salam2 extends Phaser.Scene {
     }
     if (this.game.inventario8 === true) {
       this.add.image(555, 50, 'lupap')
+    }
+    if (this.game.inventario9 === true) {
+      this.add.image(618, 50, 'papel_enrolado')
+        .setInteractive()
+        .on('pointerdown', () => {
+          this.game.scene.stop('sala_m2')
+          this.game.scene.start('tela_papel9')
+        })
     }
     this.add.image(600, 200, 'janela')
     this.add.image(279, 404, 'arbusto9')

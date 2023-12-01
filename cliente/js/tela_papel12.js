@@ -17,7 +17,7 @@ export default class papel12 extends Phaser.Scene {
       .setInteractive()
       .on('pointerdown', () => {
         this.game.scene.stop('tela_papel12')
-        this.game.scene.start('sala_m3')
+        this.game.scene.start('sala_m4')
       })
   }
 

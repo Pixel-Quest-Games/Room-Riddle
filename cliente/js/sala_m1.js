@@ -68,6 +68,14 @@ export default class salam1 extends Phaser.Scene {
     if (this.game.inventario8 === true) {
       this.add.image(555, 50, 'lupap')
     }
+    if (this.game.inventario9 === true) {
+      this.add.image(618, 50, 'papel_enrolado')
+        .setInteractive()
+        .on('pointerdown', () => {
+          this.game.scene.stop('sala_m1')
+          this.game.scene.start('tela_papel9')
+        })
+    }
     this.add.image(260, 397, 'girassol')
 
     this.add.image(400, 175, 'enigma_final')

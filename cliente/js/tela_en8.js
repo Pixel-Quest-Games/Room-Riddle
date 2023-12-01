@@ -22,6 +22,7 @@ export default class enigma8 extends Phaser.Scene {
     this.load.image('pena', '../assets/imagens/pena.png')
     this.load.image('touchtg', '../assets/imagens/touch_giga.png')
     this.load.image('livro_s', '../assets/imagens/livro_s.png')
+    this.load.image('papelenr', '../assets/imagens/papel_enroladog.png')
     this.load.image('tela_papel', '../assets/imagens/tela_papel.png')
   }
 
@@ -77,17 +78,18 @@ export default class enigma8 extends Phaser.Scene {
         if (this.penaenig === true && this.frascoenig === true) {
           this.game.verifica_enigma8 = 'V'
           this.add.image(400, 225, 'tela8')
+          this.add.image(300, 120, 'papelenr')
+            .setInteractive()
+            .on('pointerdown', () => {
+              this.game.scene.stop('enigma8')
+              this.game.scene.start('tela_papel9')
+              this.game.inventario9 = true
+            })
           this.livros = this.add.image(400, 225, 'livro_s')
             .setInteractive()
             .on('pointerdown', () => {
               this.game.inventario7 = true
               this.livros.setVisible(false)
-              this.add.image(400, 430, 'seta_down')
-                .setInteractive()
-                .on('pointerdown', () => {
-                  this.game.scene.stop('enigma8')
-                  this.game.scene.start('sala_m3')
-                })
             })
         }
       })
