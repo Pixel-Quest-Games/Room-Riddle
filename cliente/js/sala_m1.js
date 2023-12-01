@@ -4,7 +4,7 @@ export default class salam1 extends Phaser.Scene {
     super('sala_m1')
   }
 
-  preload () {
+  preload() {
     this.load.image('parede_mia1', '../assets/imagens/parede_mia1.png')
     // this.load.image('porta_final', '../assets/imagens/porta_final.png')
     this.load.image('porta_final_aberta', '../assets/imagens/porta_final_aberta.png')
@@ -15,6 +15,7 @@ export default class salam1 extends Phaser.Scene {
     this.load.image('mesa', '../assets/imagens/mesa_m1.png')
     this.load.image('cofre', '../assets/imagens/cofre.png')
     this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
+    this.load.image('papel_enrolado2', '../assets/imagens/papel_enrolado.png')
     this.load.image('walkie_talkie', '../assets/imagens/walkie_talkie.png')
     // this.load.image('estante', '../assets/imagens/estante.png')
     this.load.image('suporte_bonecos', '../assets/imagens/suporte_bonecos.png')
@@ -34,7 +35,7 @@ export default class salam1 extends Phaser.Scene {
     this.load.audio('glitch', '../assets/audios/glitch_radio.mp3')
   }
 
-  create () {
+  create() {
     this.glitch = this.sound.add('glitch')
     this.add.image(400, 225, 'parede_mia1')
     if (this.game.verifica_enigmaf_m === 'V') {
@@ -121,7 +122,17 @@ export default class salam1 extends Phaser.Scene {
         this.game.scene.stop('sala_m1')
         this.game.scene.start('gaveta4')
       })
+    this.pfinal = this.add.image(400, 440, 'papel_enrolado2')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_m1')
+        this.game.scene.start('tela_papelf')
+      })
+    this.pfinal.setVisible(false)
+    if (this.game.verifica_enigma12 === 'V') {
+      this.pfinal.setVisible(true)
+    }
   }
 
-  update () { }
+  update() { }
 }

@@ -21,6 +21,8 @@ import gaveta4 from './tela_gaveta4.js'
 import enigma2 from './tela_en2.js'
 import enigma5 from './tela_en5.js'
 import recompensa from './tela_recompensa.js'
+import telacaixa from './tela_caixa.js'
+import quadros from './tela_quadros.js'
 import enigma6 from './tela_en6.js'
 import enigma7 from './tela_en7.js'
 import enigma8 from './tela_en8.js'
@@ -28,6 +30,8 @@ import enigma9 from './tela_en9.js'
 import papel3 from './tela_papel3.js'
 import papel5 from './tela_papel5.js'
 import papel12 from './tela_papel12.js'
+// eslint-disable-next-line camelcase
+import tela_papelf from './tela_papelf.js'
 
 /* Definição do objeto Game */
 class Game extends Phaser.Game {
@@ -92,6 +96,9 @@ class Game extends Phaser.Game {
     this.scene.add('enigma7', enigma7)
     this.scene.add('enigma8', enigma8)
     this.scene.add('enigma9', enigma9)
+    this.scene.add('tela_caixa', telacaixa)
+    this.scene.add('quadros', quadros)
+    this.scene.add('tela_papelf', tela_papelf)
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
@@ -111,10 +118,10 @@ class Game extends Phaser.Game {
     this.verifica_enigma1 = 'F'
     this.verifica_enigma2 = 'F'
     this.verifica_enigma3 = 'F'
-    this.verifica_enigma4 = 'V'
+    this.verifica_enigma4 = 'F'
     this.verifica_enigma5 = 'F'
-    this.verifica_enigma6 = 'V'
-    this.verifica_enigma7 = 'V'
+    this.verifica_enigma6 = 'F'
+    this.verifica_enigma7 = 'F'
     this.verifica_enigma8 = 'F'
     this.verifica_enigma9 = 'F'
     this.verifica_enigma10 = 'F'

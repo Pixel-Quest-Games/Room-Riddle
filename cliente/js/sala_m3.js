@@ -4,7 +4,7 @@ export default class salam3 extends Phaser.Scene {
     super('sala_m3')
   }
 
-  preload () {
+  preload() {
     this.load.image('parede_mia', '../assets/imagens/parede_mia.png')
     this.load.image('inventario', '../assets/imagens/inventario.png')
     this.load.image('seta_e', '../assets/imagens/seta_esquerda.png')
@@ -18,9 +18,10 @@ export default class salam3 extends Phaser.Scene {
     this.load.image('livrop', '../assets/imagens/livro1p.png')
     this.load.image('frascop', '../assets/imagens/frascop.png')
     this.load.image('penap', '../assets/imagens/penap.png')
+    this.load.image('quadros', '../assets/imagens/item_quadros.png')
   }
 
-  create () {
+  create() {
     // eslint-disable-next-line no-unused-expressions
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
@@ -54,6 +55,12 @@ export default class salam3 extends Phaser.Scene {
         this.game.scene.start('enigma8')
       })
 
+    this.add.image(640, 200, 'quadros')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.game.scene.stop('sala_m3')
+        this.game.scene.start('quadros')
+      })
     // Configuração do carrosel de cenas
     this.add.image(25, 225, 'seta_e')
       .setInteractive()
@@ -70,5 +77,5 @@ export default class salam3 extends Phaser.Scene {
       })
   }
 
-  update () { }
+  update() { }
 }

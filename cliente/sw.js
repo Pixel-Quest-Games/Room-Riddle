@@ -146,6 +146,23 @@ const precacheResources = [
   '.imagens/livrod.png',
   '.imagens/tela_papel12.png',
   '.imagens/papel_en3.png',
+  '.imagens/lupa.png',
+  '.imagens/lupap.png',
+  '.imagens/livro_s.png',
+  '.imagens/livro_sp.png',
+  '.imagens/teste_pret.png',
+  '.imagens/touch_giga.png',
+  '.imagens/tela_en9.png',
+  '.imagens/tela_en9a.png',
+  '.imagens/caixa.png',
+  '.imagens/tela_caixa.png',
+  '.imagens/tela_caixaa.png',
+  '.imagens/osso.png',
+  '.imagens/item_quadros.png',
+  '.imagens/tela_en11.png',
+  '.imagens/painel_12.png',
+  '.imagens/alfabetom.png',
+  '.imagens/papel_codigofinal.png',
   '.js/abertura_jogo.js',
   '.js/axios_min.js',
   '.js/cofre_aberto.js',
@@ -175,8 +192,11 @@ const precacheResources = [
   '.js/tela_papel3.js',
   '.js/tela_papel5.js',
   '.js/tela_papel12.js',
+  '.js/tela_papelf.js',
   '.js/tela_recompensa.js',
-  '.js/tela_sala.js'
+  '.js/tela_sala.js',
+  '.js/tela_quadros.js',
+  '.js/tela_caixa.js'
 ]
 
 // When the service worker is installing, open the cache and add the precache resources to it
