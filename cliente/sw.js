@@ -162,6 +162,7 @@ const precacheResources = [
   '.imagens/tela_en11.png',
   '.imagens/painel_12.png',
   '.imagens/alfabetom.png',
+  '.imagens/enigma11.png',
   '.imagens/papel_codigofinal.png',
   '.js/abertura_jogo.js',
   '.js/axios_min.js',
@@ -191,11 +192,13 @@ const precacheResources = [
   '.js/tela_papel.js',
   '.js/tela_papel3.js',
   '.js/tela_papel5.js',
+  '.js/tela_papel9.js',
   '.js/tela_papel12.js',
   '.js/tela_papelf.js',
   '.js/tela_recompensa.js',
   '.js/tela_sala.js',
   '.js/tela_quadros.js',
+  '.js/enigmadpsbandeiras.js',
   '.js/tela_caixa.js'
 ]
 

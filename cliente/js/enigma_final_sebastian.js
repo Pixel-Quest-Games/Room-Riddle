@@ -1,12 +1,12 @@
-// eslint-disable-next-line no-undef
-export default class enigmafinals extends Phaser.Scene {
+// eslint-disable-next-line no-undef, camelcase
+export default class enigma_finals extends Phaser.Scene {
   constructor () {
     super('enigma_finals')
   }
 
   // Pré-carregamento
   preload () {
-    this.load.image('enigma_final_tela_cheia', '../assets/imagens/enigma_final_tela_cheia.png')
+    this.load.image('enigma_finals', '../assets/imagens/enigma_final_tela_cheia.png')
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.image('buttom_down', '../assets/imagens/seta_down_enigma_final.png')
     this.load.image('vverde', '../assets/imagens/v_verde.png')
@@ -21,14 +21,8 @@ export default class enigmafinals extends Phaser.Scene {
   }
 
   create () {
-    // Adição de música de fundo
-    /* this.trilha = this.sound.add('trilha')
-    this.trilha.loop = true
-    this.trilha.play() */
-
-    this.cliqueporta = this.sound.add('porta_abrindo')
     // Adição de plano de fundo
-    this.add.image(400, 225, 'enigma_final_tela_cheia')
+    this.add.image(400, 225, 'enigma_finals')
     // Adição de seta e interatividade
     this.add.image(400, 395, 'seta_down')
       .setInteractive()

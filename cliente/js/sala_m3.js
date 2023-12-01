@@ -19,7 +19,7 @@ export default class salam3 extends Phaser.Scene {
     this.load.image('frascop', '../assets/imagens/frascop.png')
     this.load.image('penap', '../assets/imagens/penap.png')
     this.load.image('quadros', '../assets/imagens/item_quadros.png')
-    this.load.image('enigma_final', '../assets/imagens/enigma_final.png')
+    this.load.image('enigma11', '../assets/imagens/enigma_final.png')
   }
 
   create() {
@@ -27,11 +27,11 @@ export default class salam3 extends Phaser.Scene {
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
     this.add.image(180, 376, 'estante')
-    this.add.image(400, 175, 'enigma_final')
+    this.add.image(250, 280, 'enigma11')
       .setInteractive()
       .on('pointerdown', () => {
-        this.game.scene.stop('sala_m1')
-        this.game.scene.start('enigmadpsbandeiras')
+        this.game.scene.stop('sala_m3')
+        this.game.scene.start('enigma11')
       })
     this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {
@@ -64,7 +64,7 @@ export default class salam3 extends Phaser.Scene {
     this.add.image(210, 436, 'cxlivro')
       .setInteractive()
       .on('pointerdown', () => {
-        if (this.game.verifica_enigma_8 === true) {
+        if (this.game.verifica_enigma8 === 'V') {
           console.log('Não passou')
         } else {
           this.game.scene.stop('sala_m3')
