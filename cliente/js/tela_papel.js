@@ -6,7 +6,7 @@ export default class telapapel extends Phaser.Scene {
 
   preload () {
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
-    this.load.image('papel', '../assets/imagens/tela_papel.png')
+    this.load.image('1papel', '../assets/imagens/tela_papel.png')
   }
 
   create () {
@@ -18,7 +18,7 @@ export default class telapapel extends Phaser.Scene {
       }
     }
     )
-    this.add.image(400, 225, 'papel')
+    this.add.image(400, 225, '1papel')
     this.add.text(240, 150, '01010110 01000001 ', {
       fontFamily: 'fonte_papel',
       fontSize: '20px',

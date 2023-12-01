@@ -21,6 +21,7 @@ export default class enigma8 extends Phaser.Scene {
     this.load.image('frasco', '../assets/imagens/frasco.png')
     this.load.image('pena', '../assets/imagens/pena.png')
     this.load.image('touchtg', '../assets/imagens/touch_giga.png')
+    this.load.image('livro_s', '../assets/imagens/livro_s.png')
   }
 
   create() {
@@ -36,7 +37,7 @@ export default class enigma8 extends Phaser.Scene {
       .on('pointerdown', () => {
         if (this.game.verifica_enigma8 === 'V') {
           this.add.image(400, 225, 'tela8a')
-          this.add.image(400, 225, 'livro')
+          this.add.image(400, 225, 'livro_s')
           this.add.image(400, 430, 'seta_down')
             .setInteractive()
             .on('pointerdown', () => {
