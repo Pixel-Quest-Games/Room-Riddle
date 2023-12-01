@@ -22,7 +22,7 @@ export default class enigma11 extends Phaser.Scene {
       .setInteractive()
       .on('pointerdown', () => {
         // this.trilha.stop()
-        this.game.scene.stop('enigmadpsbandeiras')
+        this.game.scene.stop('enigma11')
         this.game.scene.start('sala_m3')
       })
     // Configuração dos locais
