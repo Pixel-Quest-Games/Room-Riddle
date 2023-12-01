@@ -17,6 +17,13 @@ export default class salam2 extends Phaser.Scene {
     this.load.image('painel', '../assets/imagens/painel_1989.png')
     this.load.image('cxcofre', '../assets/imagens/caixa_cofre.png')
     this.load.image('livrop', '../assets/imagens/livro1p.png')
+    this.load.image('livro1', '../assets/imagens/livro1.png')
+    this.load.image('livro2', '../assets/imagens/livro2.png')
+    this.load.image('livro3', '../assets/imagens/livro3.png')
+    this.load.image('livro4', '../assets/imagens/livro4.png')
+    this.load.image('livro5', '../assets/imagens/livro5.png')
+    this.load.image('livro6', '../assets/imagens/livro6.png')
+    this.load.image('livro7', '../assets/imagens/livro7.png')
     this.load.image('seleciona', '../assets/imagens/seleciona.png')
     this.load.image('touch', '../assets/imagens/invisivel_p_touch.png')
     this.load.image('frascop', '../assets/imagens/frascop.png')
@@ -70,9 +77,16 @@ export default class salam2 extends Phaser.Scene {
         this.game.scene.start('sala_m3')
       })
 
+    this.add.image(110, 270, 'livro2')
+    this.add.image(130, 265, 'livro3')
+    this.add.image(150, 272, 'livro4')
+    this.add.image(170, 270, 'livro5')
+    this.add.image(190, 265, 'livro6')
+    this.add.image(210, 263, 'livro7')
+
     if (this.game.verifica_enigma4 === 'V') {
       this.add.image(300, 200, 'rasgo')
-      this.add.image(88, 268, 'livrop')
+      this.add.image(90, 265, 'livro1')
       this.add.image(185, 410, 'provisorio')
         .setInteractive()
         .on('pointerdown', () => {
