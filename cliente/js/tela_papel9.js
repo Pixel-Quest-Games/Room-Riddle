@@ -4,12 +4,12 @@ export default class telapapel9 extends Phaser.Scene {
     super('tela_papel9')
   }
 
-  preload() {
+  preload () {
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.image('2papel', '../assets/imagens/tela_papel.png')
   }
 
-  create() {
+  create () {
     // eslint-disable-next-line no-undef
     this.add.image(400, 225, '2papel')
     this.add.text(240, 130, '01010100 01010101 01000100', {
@@ -45,7 +45,7 @@ export default class telapapel9 extends Phaser.Scene {
       })
   }
 
-  update() {
+  update () {
 
   }
 }

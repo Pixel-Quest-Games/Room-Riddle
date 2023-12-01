@@ -5,7 +5,7 @@ export default class enigma11 extends Phaser.Scene {
   }
 
   // Pré-carregamento
-  preload() {
+  preload () {
     this.load.image('enigma11', '../assets/imagens/enigma11.png')
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.image('buttom_down', '../assets/imagens/seta_down_enigma_final.png')
@@ -16,7 +16,7 @@ export default class enigma11 extends Phaser.Scene {
     })
   }
 
-  create() {
+  create () {
     this.add.image(400, 225, 'enigma11')
     this.add.image(400, 395, 'seta_down')
       .setInteractive()
@@ -147,5 +147,5 @@ export default class enigma11 extends Phaser.Scene {
     })
   }
 
-  update() { }
+  update () { }
 }

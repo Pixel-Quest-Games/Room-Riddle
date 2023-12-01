@@ -4,7 +4,7 @@ export default class salam3 extends Phaser.Scene {
     super('sala_m3')
   }
 
-  preload() {
+  preload () {
     this.load.image('parede_mia', '../assets/imagens/parede_mia.png')
     this.load.image('inventario', '../assets/imagens/inventario.png')
     this.load.image('seta_e', '../assets/imagens/seta_esquerda.png')
@@ -23,7 +23,7 @@ export default class salam3 extends Phaser.Scene {
     this.load.image('papel_enrolado', '../assets/imagens/papel_enrolado.png')
   }
 
-  create() {
+  create () {
     // eslint-disable-next-line no-unused-expressions
     this.game.inventario
     this.add.image(400, 225, 'parede_mia')
@@ -103,5 +103,5 @@ export default class salam3 extends Phaser.Scene {
       })
   }
 
-  update() { }
+  update () { }
 }

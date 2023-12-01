@@ -29,11 +29,9 @@ import enigma8 from './tela_en8.js'
 import enigma9 from './tela_en9.js'
 import papel3 from './tela_papel3.js'
 import papel5 from './tela_papel5.js'
-import papel9 from './tela_papel9.js'
 import papel12 from './tela_papel12.js'
 // eslint-disable-next-line camelcase
 import tela_papelf from './tela_papelf.js'
-<<<<<<< HEAD
 import enigmadpsbandeiras from './enigmadpsbandeiras.js'
 // eslint-disable-next-line camelcase
 import tela_papel9 from './tela_papel9.js'
@@ -91,7 +89,7 @@ class Game extends Phaser.Game {
     this.scene.add('tela_papel', telapapel)
     this.scene.add('tela_papel3', papel3)
     this.scene.add('tela_papel5', papel5)
-    this.scene.add('tela_papel9', papel9)
+    this.scene.add('tela_papel9', tela_papel9)
     this.scene.add('tela_papel12', papel12)
     this.scene.add('cofre_aberto', cofreaberto)
     this.scene.add('gaveta4', gaveta4)
@@ -105,9 +103,7 @@ class Game extends Phaser.Game {
     this.scene.add('tela_caixa', telacaixa)
     this.scene.add('quadros', quadros)
     this.scene.add('tela_papelf', tela_papelf)
-<<<<<<< HEAD
     this.scene.add('enigmadpsbandeiras', enigmadpsbandeiras)
-    this.scene.add('tela_papel9', tela_papel9)
     this.scene.start('abertura_jogo')
     // Objetos comuns as cenas
     this.inventario = {}
