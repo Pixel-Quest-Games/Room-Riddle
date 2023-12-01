@@ -31,8 +31,8 @@ export default class salam3 extends Phaser.Scene {
     this.add.image(250, 280, 'enigma_final')
       .setInteractive()
       .on('pointerdown', () => {
-        this.game.scene.stop('sala_m1')
-        this.game.scene.start('enigmadpsbandeiras')
+        this.game.scene.stop('sala_m3')
+        this.game.scene.start('enigma11')
       })
     this.add.image(400, 50, 'inventario')
     if (this.game.inventario1 === true) {

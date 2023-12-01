@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-undef
-export default class enigmadpsbandeiras extends Phaser.Scene {
+export default class enigma11 extends Phaser.Scene {
   constructor () {
-    super('enigmadpsbandeiras')
+    super('enigma11')
   }
 
   // Pré-carregamento
-  preload () {
-    this.load.image('enigma_final_tela_cheia', '../assets/imagens/enigma_final_tela_cheia.png')
+  preload() {
+    this.load.image('enigma11', '../assets/imagens/enigma11.png')
     this.load.image('seta_down', '../assets/imagens/seta_down.png')
     this.load.image('buttom_down', '../assets/imagens/seta_down_enigma_final.png')
     // this.load.audio('trilha', '../assets/audios/musica_fundo.mp3')
@@ -16,15 +16,8 @@ export default class enigmadpsbandeiras extends Phaser.Scene {
     })
   }
 
-  create () {
-    // Adição de música de fundo
-    /* this.trilha = this.sound.add('trilha')
-    this.trilha.loop = true
-    this.trilha.play() */
-
-    // Adição de plano de fundo
-    this.add.image(400, 225, 'enigma_final_tela_cheia')
-    // Adição de seta e interatividade
+  create() {
+    this.add.image(400, 225, 'enigma11')
     this.add.image(400, 395, 'seta_down')
       .setInteractive()
       .on('pointerdown', () => {
@@ -154,5 +147,5 @@ export default class enigmadpsbandeiras extends Phaser.Scene {
     })
   }
 
-  update () { }
+  update() { }
 }
